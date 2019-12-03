@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8577828305599354688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod_project/physical_sound_fmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637109754691289047
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-8058794906705933243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Wood/Fall
+  m_EditorClassIdentifier: 
+  Path: event:/Wood/Fall
+  guid: 23ebe0dfa15fcf499c3ac8ad96a84a4c
+  Banks:
+  - {fileID: -5281425663796116605}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 362
+--- !u!114 &-5281425663796116605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod_project/physical_sound_fmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637109756090814048
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-2182218980602658662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod_project/physical_sound_fmod/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637109756090874092
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 734
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -2182218980602658662}
+  - {fileID: -5281425663796116605}
+  EditorEvents:
+  - {fileID: -8058794906705933243}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -5281425663796116605}
+  StringsBanks:
+  - {fileID: -2182218980602658662}
+  stringsBankWriteTime: 637109756090874092
+  cacheVersion: 3
+--- !u!114 &9221209358588891821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod_project/physical_sound_fmod/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637109754665060099
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
