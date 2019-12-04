@@ -11,6 +11,18 @@ namespace PhysicalSound
     {
         static private List<Tuple<SoundCollider, SoundCollider>> _collisions;
         
+        static Manager() {
+            FMOD.Studio.Bank c;
+            FMODUnity.RuntimeManager.StudioSystem.getBank("bank:/Master Bank", out c);
+
+            FMOD.Studio.EventDescription[] descriptions;
+            c.getEventList(out descriptions);
+            foreach (FMOD.Studio.EventDescription des in descriptions)
+            {
+                // LOAD MATERIAL INTERACTIONS IN AN ARRAY
+            }
+        }
+
         public static void collisionDetected(SoundCollider yourself, SoundCollider other)
         {
             if (_collisions == null) _collisions = new List<Tuple<SoundCollider, SoundCollider>>();
@@ -26,12 +38,22 @@ namespace PhysicalSound
             }
 
             _collisions.Add(collision);
-            playCollisionSound();
+            playCollisionSound(yourself, other);
         }
 
-        private static void playCollisionSound()
+        public static void genericCollisionDetected(SoundCollider yourself)
         {
+            playCollisionSound(yourself);
+        }
 
+        private static void playCollisionSound(SoundCollider yourself, SoundCollider other)
+        {
+            yourself.getEventEmitter().Play();
+        }
+
+        private static void playCollisionSound(SoundCollider yourself)
+        {
+            yourself.getEventEmitter().Play();
         }
     }
 }

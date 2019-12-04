@@ -15,8 +15,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../fmod_project/physical_sound_fmod/physical_sound_fmod.fspro
-  sourceBankPath: ..\fmod_project\physical_sound_fmod\Build
+  sourceProjectPath: ../test/test.fspro
+  sourceBankPath: ..\test\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1
   BankLoadType: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
     Value: 32
   Plugins: []
   MasterBanks:
-  - Master
+  - Master Bank
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
