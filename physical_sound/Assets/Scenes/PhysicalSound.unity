@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundMaterial: Wood
+  soundMaterial: wood
   requireAnotherSoundMaterial: 0
 --- !u!114 &320529913
 MonoBehaviour:
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Wood/Wood
+  Event: event:/wood/wood
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 1143052422}
   - component: {fileID: 1143052427}
   - component: {fileID: 1143052428}
+  - component: {fileID: 1143052421}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -478,6 +479,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1143052421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143052420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundMaterial: wood
+  requireAnotherSoundMaterial: 0
 --- !u!54 &1143052422
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -593,15 +608,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/Wood/Wood
+  Event: event:/wood/wood
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params:
-  - Name: Size
-    Value: 1
+  Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
@@ -618,6 +631,8 @@ GameObject:
   - component: {fileID: 1765238680}
   - component: {fileID: 1765238679}
   - component: {fileID: 1765238683}
+  - component: {fileID: 1765238685}
+  - component: {fileID: 1765238684}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -716,3 +731,40 @@ MonoBehaviour:
   - Master Bank
   CollisionTag: 
   PreloadSamples: 0
+--- !u!114 &1765238684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765238678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundMaterial: wood
+  requireAnotherSoundMaterial: 0
+--- !u!114 &1765238685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765238678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/wood/wood
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

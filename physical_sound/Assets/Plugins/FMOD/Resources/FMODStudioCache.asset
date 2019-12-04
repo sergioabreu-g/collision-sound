@@ -93,12 +93,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../fmod_project/Build/Desktop/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637110962874588288
+  lastModified: 637110975426902625
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 774
+    Value: 820
   Exists: 1
+--- !u!114 &-6089384475668503163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/metal/metal
+  m_EditorClassIdentifier: 
+  Path: event:/metal/metal
+  guid: 0fe201e9478e8241a6911622f8f542a2
+  Banks:
+  - {fileID: 8429228926070441092}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6047559453371319840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +192,7 @@ MonoBehaviour:
   lastModified: 637110962874518227
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2182218980602658662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,16 +244,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6214742790020441080}
-  - {fileID: -3309471646013355826}
+  - {fileID: 8429228926070441092}
   EditorEvents:
-  - {fileID: 3110538964169491733}
-  - {fileID: 342751532478975475}
+  - {fileID: -6089384475668503163}
+  - {fileID: 7064025769733705827}
+  - {fileID: 8609996667863871556}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3309471646013355826}
+  - {fileID: 8429228926070441092}
   StringsBanks:
   - {fileID: -6214742790020441080}
-  stringsBankWriteTime: 637110962874588288
+  stringsBankWriteTime: 637110975426902625
   cacheVersion: 3
 --- !u!114 &273143684006700271
 MonoBehaviour:
@@ -263,8 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Metal/Metal
   guid: d3e59f5c03ce4641985147e989d22544
-  Banks:
-  - {fileID: -3309471646013355826}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -272,6 +295,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &787499458021403891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &1543158700730867031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +329,23 @@ MonoBehaviour:
   lastModified: 637110818908883322
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &1959835888341235144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
   Exists: 1
 --- !u!114 &2517512989293199238
 MonoBehaviour:
@@ -327,8 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Wood/Wood
   guid: 3c4d31f73c03fe47bafadfd034c1fc5d
-  Banks:
-  - {fileID: -3309471646013355826}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -379,6 +435,49 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 400
+--- !u!114 &7064025769733705827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/wood/wood
+  m_EditorClassIdentifier: 
+  Path: event:/wood/wood
+  guid: 3c4d31f73c03fe47bafadfd034c1fc5d
+  Banks:
+  - {fileID: 8429228926070441092}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 787499458021403891}
+  - {fileID: 1959835888341235144}
+  - {fileID: 7473286427007878921}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
+--- !u!114 &7473286427007878921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &7633192688675082498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +496,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &8429228926070441092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod_project/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637110975426842570
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8457672464202075029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +531,29 @@ MonoBehaviour:
   Max: 10
   Default: 0
   Exists: 1
+--- !u!114 &8609996667863871556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/metal/wood
+  m_EditorClassIdentifier: 
+  Path: event:/metal/wood
+  guid: d3e59f5c03ce4641985147e989d22544
+  Banks:
+  - {fileID: 8429228926070441092}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &9221209358588891821
 MonoBehaviour:
   m_ObjectHideFlags: 0

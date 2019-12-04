@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.01.10.00">
     <object class="Event" id="{f7314d3c-033c-47fe-bafa-dfd034c1fc5d}">
         <property name="name">
-            <value>Wood</value>
+            <value>wood</value>
         </property>
         <property name="outputFormat">
             <value>2</value>
@@ -33,6 +33,8 @@
         </relationship>
         <relationship name="parameters">
             <destination>{90e96e33-04a5-4438-8115-da0553ca4fe2}</destination>
+            <destination>{1e0ef24f-09d2-4f50-97a9-b1a9e45ed8d6}</destination>
+            <destination>{e04b7fcb-76ae-4d38-b7d1-d85a13f03f53}</destination>
         </relationship>
         <relationship name="banks">
             <destination>{d9f6e31a-ecb1-4af6-ac85-d661325fa34c}</destination>
@@ -80,6 +82,16 @@
     <object class="ParameterProxy" id="{90e96e33-04a5-4438-8115-da0553ca4fe2}">
         <relationship name="preset">
             <destination>{c8f2d060-e700-462f-9e9b-5ad99590c4fd}</destination>
+        </relationship>
+    </object>
+    <object class="ParameterProxy" id="{1e0ef24f-09d2-4f50-97a9-b1a9e45ed8d6}">
+        <relationship name="preset">
+            <destination>{0a42f3fb-5312-455e-a0b5-fceb1b4d066b}</destination>
+        </relationship>
+    </object>
+    <object class="ParameterProxy" id="{e04b7fcb-76ae-4d38-b7d1-d85a13f03f53}">
+        <relationship name="preset">
+            <destination>{98621210-692c-4679-a28b-d1414545766a}</destination>
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{1918085c-41b4-4003-a13c-22c150cf6d6b}">
