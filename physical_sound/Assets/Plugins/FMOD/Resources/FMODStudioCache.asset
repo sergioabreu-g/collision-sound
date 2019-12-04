@@ -79,6 +79,43 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-6214742790020441080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod_project/Build/Desktop/Master Bank.strings.bank
+  SubDir: 
+  lastModified: 637110962874588288
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 774
+  Exists: 1
+--- !u!114 &-6047559453371319840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Wood/Size
+  m_EditorClassIdentifier: 
+  Name: Size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 1
 --- !u!114 &-5597666442861583489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +149,24 @@ MonoBehaviour:
   Path: ../fmod_project/physical_sound_fmod/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637109756090814048
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3309471646013355826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod_project/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637110962874518227
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -165,17 +220,17 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -7191349594567813692}
-  - {fileID: -5597666442861583489}
+  - {fileID: -6214742790020441080}
+  - {fileID: -3309471646013355826}
   EditorEvents:
-  - {fileID: 6413806155957892150}
-  - {fileID: 2517512989293199238}
+  - {fileID: 3110538964169491733}
+  - {fileID: 342751532478975475}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -5597666442861583489}
+  - {fileID: -3309471646013355826}
   StringsBanks:
-  - {fileID: -7191349594567813692}
-  stringsBankWriteTime: 637110841679655627
+  - {fileID: -6214742790020441080}
+  stringsBankWriteTime: 637110962874588288
   cacheVersion: 3
 --- !u!114 &273143684006700271
 MonoBehaviour:
@@ -194,6 +249,29 @@ MonoBehaviour:
   Max: 10
   Default: 0
   Exists: 1
+--- !u!114 &342751532478975475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Metal/Metal
+  m_EditorClassIdentifier: 
+  Path: event:/Metal/Metal
+  guid: d3e59f5c03ce4641985147e989d22544
+  Banks:
+  - {fileID: -3309471646013355826}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1543158700730867031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +313,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3110538964169491733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Wood/Wood
+  m_EditorClassIdentifier: 
+  Path: event:/Wood/Wood
+  guid: 3c4d31f73c03fe47bafadfd034c1fc5d
+  Banks:
+  - {fileID: -3309471646013355826}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6047559453371319840}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &4864622647397028446
 MonoBehaviour:
   m_ObjectHideFlags: 0
