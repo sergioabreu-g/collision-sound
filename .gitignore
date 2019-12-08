@@ -5,6 +5,9 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
+!fmod_project/[Bb]uild/
+!fmod_project/[Bb]uilds/
+
 # Visual Studio cache directory
 .vs/
 

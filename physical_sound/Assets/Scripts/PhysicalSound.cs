@@ -83,7 +83,8 @@ namespace PhysicalSound
         {
             if (!_soundEvents.ContainsKey(yourself.soundMaterial) || !_soundEvents.ContainsKey(other.soundMaterial)) {
 #if UNITY_EDITOR
-                Debug.LogError("Sound material name not found");
+                Debug.LogError("Sound material '" + yourself.soundMaterial + "' not found.\n" +
+                    "Remember to re-build the FMOD Studio project after making any change.");
 #endif
                 return;
             }
@@ -112,6 +113,17 @@ namespace PhysicalSound
 
         private static void playCollisionSound(SoundCollider yourself)
         {
+            if (!_soundEvents.ContainsKey(yourself.soundMaterial)) {
+#if UNITY_EDITOR
+                Debug.LogError("Sound material '" + yourself.soundMaterial + "' not found.\n" +
+                    "Remember to re-build the FMOD Studio project after making any change.");
+#endif
+                return;
+            }
+
+            string path;
+            _soundEvents[yourself.soundMaterial][yourself.soundMaterial].getPath(out path);
+            yourself.getEventEmitter().Event = path;
             yourself.getEventEmitter().Play();
         }
     }
