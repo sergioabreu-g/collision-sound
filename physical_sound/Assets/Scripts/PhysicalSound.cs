@@ -38,7 +38,12 @@ namespace PhysicalSound
                     materialEvents = new Dictionary<string, FMOD.Studio.EventDescription>();
                     _soundEvents.Add(material, materialEvents);
                 }
+
                 if (!materialEvents.ContainsKey(collidesWith)) materialEvents.Add(collidesWith, description);
+                else {
+                    warnDuplicate(material, collidesWith);
+                    continue;
+                }
 
                 if (material == collidesWith) continue;
 
@@ -52,7 +57,9 @@ namespace PhysicalSound
                     collidesWithEvents = new Dictionary<string, FMOD.Studio.EventDescription>();
                     _soundEvents.Add(collidesWith, collidesWithEvents);
                 }
+
                 if (!collidesWithEvents.ContainsKey(material)) collidesWithEvents.Add(material, description);
+                else warnDuplicate(material, collidesWith);
             }
         }
 
@@ -82,10 +89,7 @@ namespace PhysicalSound
         private static void playCollisionSound(SoundCollider yourself, SoundCollider other)
         {
             if (!_soundEvents.ContainsKey(yourself.soundMaterial) || !_soundEvents.ContainsKey(other.soundMaterial)) {
-#if UNITY_EDITOR
-                Debug.LogError("Sound material '" + yourself.soundMaterial + "' not found.\n" +
-                    "Remember to re-build the FMOD Studio project after making any change.");
-#endif
+                errorMaterialNotFound(yourself.soundMaterial);
                 return;
             }
 
@@ -114,10 +118,7 @@ namespace PhysicalSound
         private static void playCollisionSound(SoundCollider yourself)
         {
             if (!_soundEvents.ContainsKey(yourself.soundMaterial)) {
-#if UNITY_EDITOR
-                Debug.LogError("Sound material '" + yourself.soundMaterial + "' not found.\n" +
-                    "Remember to re-build the FMOD Studio project after making any change.");
-#endif
+                errorMaterialNotFound(yourself.soundMaterial);
                 return;
             }
 
@@ -125,6 +126,23 @@ namespace PhysicalSound
             _soundEvents[yourself.soundMaterial][yourself.soundMaterial].getPath(out path);
             yourself.getEventEmitter().Event = path;
             yourself.getEventEmitter().Play();
+        }
+
+        private static void warnDuplicate(string first_material, string second_material) {
+#if UNITY_EDITOR
+            Debug.LogWarning(String.Format("There's already an event defined for the collision between '{0}' " +
+                "and '{1}'. One of them will be ignored." +
+                "\nCheck your FMOD Studio project and remove any duplicates to avoid shadowing."
+                , first_material, second_material));
+#endif
+        }
+
+        private static void errorMaterialNotFound(string material) {
+#if UNITY_EDITOR
+            Debug.LogError("Sound material '" + material + "' not found.\n" +
+                            "Remember to re-build the FMOD Studio project after making any change.");
+#endif
+
         }
     }
 }
