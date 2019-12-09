@@ -12,6 +12,7 @@ namespace PhysicalSound
         // 2D Matrix of event descriptions for the collisions between materials
         static private Dictionary<string, Dictionary<string, FMOD.Studio.EventDescription>> _soundEvents;
         static private List<Tuple<SoundCollider, SoundCollider>> _collisions;
+        static private string[] _materialNames;
         
         static Manager() {
             FMOD.Studio.Bank bank;
@@ -61,6 +62,9 @@ namespace PhysicalSound
                 if (!collidesWithEvents.ContainsKey(material)) collidesWithEvents.Add(material, description);
                 else warnDuplicate(material, collidesWith);
             }
+
+            _materialNames = new string[_soundEvents.Keys.Count];
+            _soundEvents.Keys.CopyTo(_materialNames, 0);
         }
 
         public static void collisionDetected(SoundCollider yourself, SoundCollider other)
@@ -88,14 +92,14 @@ namespace PhysicalSound
 
         private static void playCollisionSound(SoundCollider yourself, SoundCollider other)
         {
-            if (!_soundEvents.ContainsKey(yourself.soundMaterial) || !_soundEvents.ContainsKey(other.soundMaterial)) {
-                errorMaterialNotFound(yourself.soundMaterial);
+            if (!_soundEvents.ContainsKey(yourself.getSoundMaterial()) || !_soundEvents.ContainsKey(other.getSoundMaterial())) {
+                errorMaterialNotFound(yourself.getSoundMaterial());
                 return;
             }
 
             // If there is a particular event defined for this collision, play it
             FMOD.Studio.EventDescription desc;
-            if (_soundEvents[yourself.soundMaterial].TryGetValue(other.soundMaterial, out desc)) {
+            if (_soundEvents[yourself.getSoundMaterial()].TryGetValue(other.getSoundMaterial(), out desc)) {
                 string path;
                 desc.getPath(out path);
                 yourself.getEventEmitter().Event = path;
@@ -104,10 +108,10 @@ namespace PhysicalSound
 
             else { // Else, play each sound material default sound
                 string path;
-                _soundEvents[yourself.soundMaterial][yourself.soundMaterial].getPath(out path);
+                _soundEvents[yourself.getSoundMaterial()][yourself.getSoundMaterial()].getPath(out path);
                 yourself.getEventEmitter().Event = path;
 
-                _soundEvents[other.soundMaterial][other.soundMaterial].getPath(out path);
+                _soundEvents[other.getSoundMaterial()][other.getSoundMaterial()].getPath(out path);
                 other.getEventEmitter().Event = path;
 
                 yourself.getEventEmitter().Play();
@@ -117,15 +121,24 @@ namespace PhysicalSound
 
         private static void playCollisionSound(SoundCollider yourself)
         {
-            if (!_soundEvents.ContainsKey(yourself.soundMaterial)) {
-                errorMaterialNotFound(yourself.soundMaterial);
+            if (!_soundEvents.ContainsKey(yourself.getSoundMaterial())) {
+                errorMaterialNotFound(yourself.getSoundMaterial());
                 return;
             }
 
             string path;
-            _soundEvents[yourself.soundMaterial][yourself.soundMaterial].getPath(out path);
+            _soundEvents[yourself.getSoundMaterial()][yourself.getSoundMaterial()].getPath(out path);
             yourself.getEventEmitter().Event = path;
             yourself.getEventEmitter().Play();
+        }
+
+        public static int materialCount() {
+            return _soundEvents.Count;
+        }
+
+        public static string[] getMaterialNames() {
+
+            return _materialNames;
         }
 
         private static void warnDuplicate(string first_material, string second_material) {

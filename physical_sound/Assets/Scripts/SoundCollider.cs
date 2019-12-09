@@ -7,7 +7,8 @@ namespace PhysicalSound
     [RequireComponent(typeof(FMODUnity.StudioEventEmitter))]
     public class SoundCollider : MonoBehaviour
     {
-        public string soundMaterial = "wood";
+        [SerializeField]
+        private string _soundMaterial = "wood";
 
         [Tooltip("If set to true, sounds will only be played if the" +
             "other gameobject also has a SoundMaterial component.")]
@@ -65,6 +66,14 @@ namespace PhysicalSound
         public FMODUnity.StudioEventEmitter getEventEmitter()
         {
             return _emitter;
+        }
+
+        public void setSoundMaterial(string material) {
+            _soundMaterial = material;
+        }
+
+        public string getSoundMaterial() {
+            return _soundMaterial;
         }
     }
 }
