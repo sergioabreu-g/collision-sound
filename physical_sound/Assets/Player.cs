@@ -6,11 +6,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 100;
+    public float jumpForce = 500;
     public float cameraSensitivity = 1;
     public UIManager ui_manager;
     public PhysicalSound.SoundCollider spawnable;
-    public float spawnableForce;
+    public float spawnMaxForce = 1500;
+    public float spawnMinForce = 500;
+
     public float spawnDistance = 0.5f;
+    public float shotLoadTime = 1.5f;
 
     [SerializeField]
     private string _currentMaterial;
@@ -22,6 +26,7 @@ public class Player : MonoBehaviour
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
+    private float shotTimer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +44,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movement();
+        Jump();
         CameraRotation();
         MaterialSelection();
         MaterialSpawn();
@@ -77,12 +83,24 @@ public class Player : MonoBehaviour
     }
 
     void MaterialSpawn() {
-        if (Input.GetButtonDown("Fire1")) {
+        if (Input.GetButton("Fire1")) {
+            shotTimer += Time.deltaTime;
+        }
+        else if (shotTimer > 0) {
             PhysicalSound.SoundCollider spawned = Instantiate(spawnable);
             spawned.transform.position = _cam.transform.position + _cam.transform.forward * spawnDistance;
             spawned.setSoundMaterial(_currentMaterial);
             Rigidbody rb = spawned.GetComponent<Rigidbody>();
-            rb.AddForce(_cam.transform.forward * spawnableForce);
+            float currentForce = spawnMaxForce * (shotTimer / shotLoadTime);
+            rb.AddForce(_cam.transform.forward * Mathf.Clamp(currentForce, spawnMinForce, spawnMaxForce));
+
+            shotTimer = 0;
+        }
+    }
+
+    void Jump() {
+        if (Input.GetButtonDown("Jump")) {
+            _rb.AddForce(_cam.transform.up * jumpForce);
         }
     }
 }
