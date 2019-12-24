@@ -31,6 +31,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
+
         _rb = GetComponent<Rigidbody>();
         _cam = GetComponentInChildren<Camera>();
         if (_cam == null)
@@ -53,16 +55,16 @@ public class Player : MonoBehaviour
     void Movement() {
         Vector3 force = transform.forward;
         force.y = 0;
-        _rb.AddForce(force.normalized * Input.GetAxis("Vertical") * speed);
+        _rb.AddForce(force.normalized * Input.GetAxis("Vertical") * speed * Time.deltaTime);
 
         force = transform.right;
         force.y = 0;
-        _rb.AddForce(force.normalized * Input.GetAxis("Horizontal") * speed);
+        _rb.AddForce(force.normalized * Input.GetAxis("Horizontal") * speed * Time.deltaTime);
     }
 
     void CameraRotation() {
-        yaw += cameraSensitivity * Input.GetAxis("Mouse X");
-        pitch -= cameraSensitivity * Input.GetAxis("Mouse Y");
+        yaw += cameraSensitivity * Input.GetAxis("Mouse X") * Time.deltaTime;
+        pitch -= cameraSensitivity * Input.GetAxis("Mouse Y") * Time.deltaTime;
 
         transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
         Vector3 camRot = _cam.transform.eulerAngles;

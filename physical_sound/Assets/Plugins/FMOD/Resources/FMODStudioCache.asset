@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9142615986830657419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-9080935784166746510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,14 +32,14 @@ MonoBehaviour:
   Path: event:/metal/wood
   guid: 2951a3da712af84989a7ce5dbebb4a59
   Banks:
-  - {fileID: 8514870892757381579}
+  - {fileID: 8029164343579956242}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 4979063686744497044}
-  - {fileID: -6574583505020872306}
-  - {fileID: -288086871018415499}
+  - {fileID: -5644793200371812486}
+  - {fileID: -3195739918335838650}
+  - {fileID: -4415068651135829521}
   MinDistance: 1
   MaxDistance: 20
   Length: 420
@@ -146,7 +163,42 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-8515327981165022683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod_project/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637128151642378429
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-8455370528119022949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-8451608214019554686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,6 +272,40 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 362
+--- !u!114 &-7991539756051472079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-7831445612612503312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 1
 --- !u!114 &-7744102796712473564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +331,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 266
+--- !u!114 &-7725594235404148212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-7710970298533257018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +526,7 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6662003552828317565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +595,7 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6545492216549269993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,14 +646,14 @@ MonoBehaviour:
   Path: event:/metal/metal
   guid: ffae7918475be841af33eb71d892fcc9
   Banks:
-  - {fileID: 8514870892757381579}
+  - {fileID: 8029164343579956242}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -1076254202602246352}
-  - {fileID: -960531018875792022}
-  - {fileID: -3715147314469439168}
+  - {fileID: 30458771759239170}
+  - {fileID: -1651563146574600483}
+  - {fileID: 544111595026034717}
   MinDistance: 1
   MaxDistance: 20
   Length: 604
@@ -579,6 +682,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 420
+--- !u!114 &-6283777894842943421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 0
 --- !u!114 &-6214742790020441080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,6 +847,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-5644793200371812486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-5597666442861583489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,6 +1019,40 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-4586696801349347033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-4415068651135829521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-4304044678321602946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -989,7 +1160,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3855255993973811570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,7 +1194,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &-3709639280858435590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &-3481764650784119400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,6 +1247,40 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-3195739918335838650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 1
+--- !u!114 &-3122114175529921545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 0
 --- !u!114 &-2913030015567920424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,14 +1296,14 @@ MonoBehaviour:
   Path: event:/wood/wood
   guid: 3c4d31f73c03fe47bafadfd034c1fc5d
   Banks:
-  - {fileID: 8514870892757381579}
+  - {fileID: 8029164343579956242}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -3887025236404080517}
-  - {fileID: -1457979149913536488}
-  - {fileID: 2072754608886241753}
+  - {fileID: -9142615986830657419}
+  - {fileID: 7417756536612875229}
+  - {fileID: 6006572202570367375}
   MinDistance: 1
   MaxDistance: 20
   Length: 400
@@ -1225,6 +1447,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-1651563146574600483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 1
 --- !u!114 &-1457979149913536488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1241,7 +1480,7 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1326579438453313880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,7 +1568,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1055030845765532597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,7 +1602,7 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-908474491740894715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,6 +1678,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-545831132220289017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 0
 --- !u!114 &-288086871018415499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1455,7 +1711,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
+--- !u!114 &-193537585740061231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 0
 --- !u!114 &-138225867672900961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1467,6 +1740,23 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/glass/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-95324625986846381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/speed
   m_EditorClassIdentifier: 
   Name: speed
   Min: 0
@@ -1487,7 +1777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 458775716521229205}
-  - {fileID: 8514870892757381579}
+  - {fileID: 8029164343579956242}
   EditorEvents:
   - {fileID: -6493965352776346169}
   - {fileID: -2913030015567920424}
@@ -1495,11 +1785,28 @@ MonoBehaviour:
   - {fileID: 7821352267774827883}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8514870892757381579}
+  - {fileID: 8029164343579956242}
   StringsBanks:
   - {fileID: 458775716521229205}
-  stringsBankWriteTime: 637114337898532668
+  stringsBankWriteTime: 637128154455048713
   cacheVersion: 3
+--- !u!114 &30458771759239170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &139557975662738121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,6 +1842,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &232421419649342594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &273143684006700271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1552,6 +1876,23 @@ MonoBehaviour:
   Max: 10
   Default: 0
   Exists: 1
+--- !u!114 &297745913490506181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 0
 --- !u!114 &297780691843607437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1605,11 +1946,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: ../fmod_project/Build/Desktop/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637114337898532668
+  lastModified: 637128154455048713
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 862
+  Exists: 1
+--- !u!114 &544111595026034717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 1
 --- !u!114 &579266402233779369
 MonoBehaviour:
@@ -1627,7 +1985,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &634368928574561504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1679,6 +2037,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &933562946909795617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 0
 --- !u!114 &945985935371985863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1696,6 +2071,23 @@ MonoBehaviour:
   lastModified: 637114064429519853
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &1358756288771150018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 0
 --- !u!114 &1543158700730867031
 MonoBehaviour:
@@ -1766,6 +2158,23 @@ MonoBehaviour:
   Max: 10
   Default: 0
   Exists: 0
+--- !u!114 &1900263117980300885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &1959835888341235144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1833,7 +2242,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2286778474287637412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,6 +2382,40 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &3390810124353078072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &3414900262457767490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &3693343582812910372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2015,6 +2458,24 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+  Exists: 0
+--- !u!114 &4365917657479879588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod_project/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637120987569544974
+  LoadResult: 0
+  FileSizes: []
   Exists: 0
 --- !u!114 &4418848705548379152
 MonoBehaviour:
@@ -2119,7 +2580,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5189133429529449588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2171,6 +2632,23 @@ MonoBehaviour:
   Max: 10
   Default: 0
   Exists: 0
+--- !u!114 &5411481465443388257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5505106481721124518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2256,6 +2734,40 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &6006572202570367375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &6086157396515393576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &6413806155957892150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2331,6 +2843,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &6745720963978969052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &6893657629325649599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2374,6 +2903,40 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 400
+--- !u!114 &7172922073642324966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 0
+--- !u!114 &7312079625783215136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &7359794689350597964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,6 +2969,23 @@ MonoBehaviour:
   Name: speed
   Min: 0
   Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &7417756536612875229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
   Default: 0
   Exists: 1
 --- !u!114 &7473286427007878921
@@ -2492,14 +3072,14 @@ MonoBehaviour:
   Path: event:/glass/glass
   guid: 91225a65f3f4a444aa0baafb73da2e85
   Banks:
-  - {fileID: 8514870892757381579}
+  - {fileID: 8029164343579956242}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 579266402233779369}
-  - {fileID: 7415789171811508796}
-  - {fileID: -6684577764968839214}
+  - {fileID: 5411481465443388257}
+  - {fileID: 7312079625783215136}
+  - {fileID: -7831445612612503312}
   MinDistance: 1
   MaxDistance: 20
   Length: 266
@@ -2537,6 +3117,24 @@ MonoBehaviour:
   Max: 10
   Default: 0
   Exists: 0
+--- !u!114 &8029164343579956242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: ../fmod_project/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637128154454988659
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8046682060969063679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2571,6 +3169,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &8157427464080903501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/speed
+  m_EditorClassIdentifier: 
+  Name: speed
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &8225993938663106167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2584,6 +3199,23 @@ MonoBehaviour:
   m_Name: parameter:/wood/mass
   m_EditorClassIdentifier: 
   Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &8256459219691752823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/speed
+  m_EditorClassIdentifier: 
+  Name: speed
   Min: 0
   Max: 1
   Default: 0
@@ -2605,6 +3237,23 @@ MonoBehaviour:
   Max: 10
   Default: 0
   Exists: 1
+--- !u!114 &8319805568442850001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &8429228926070441092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2674,7 +3323,24 @@ MonoBehaviour:
   lastModified: 637114337898472614
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
+--- !u!114 &8541946852775850202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 0
 --- !u!114 &8609996667863871556
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundMaterial: wood
+  _sizeFactor: 1
   requireAnotherSoundMaterial: 0
 --- !u!114 &320529913
 MonoBehaviour:
@@ -510,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundMaterial: wood
+  _sizeFactor: 1
   requireAnotherSoundMaterial: 0
 --- !u!114 &720188152
 MonoBehaviour:
@@ -816,6 +818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundMaterial: wood
+  _sizeFactor: 1
   requireAnotherSoundMaterial: 0
 --- !u!54 &1143052422
 Rigidbody:
@@ -925,7 +928,13 @@ MonoBehaviour:
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: speed
+    Value: 0
+  - Name: size
+    Value: 0
+  - Name: mass
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
@@ -1164,7 +1173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549769319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.5, z: -44.2}
+  m_LocalPosition: {x: 0, y: 10.5, z: -13.5}
   m_LocalScale: {x: 1, y: 1.7, z: 1}
   m_Children:
   - {fileID: 963194228}
@@ -1451,6 +1460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundMaterial: wood
+  _sizeFactor: 1
   requireAnotherSoundMaterial: 0
 --- !u!114 &1765238685
 MonoBehaviour:

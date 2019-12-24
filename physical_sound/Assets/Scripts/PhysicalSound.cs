@@ -17,7 +17,6 @@ namespace PhysicalSound
         static Manager() {
             FMOD.Studio.Bank bank;
             FMODUnity.RuntimeManager.StudioSystem.getBank("bank:/Master Bank", out bank);
-
             FMOD.Studio.EventDescription[] eventDescriptions;
             bank.getEventList(out eventDescriptions);
 
@@ -62,7 +61,7 @@ namespace PhysicalSound
                 if (!collidesWithEvents.ContainsKey(material)) collidesWithEvents.Add(material, description);
                 else warnDuplicate(material, collidesWith);
             }
-
+            
             _materialNames = new string[_soundEvents.Keys.Count];
             _soundEvents.Keys.CopyTo(_materialNames, 0);
         }
@@ -102,20 +101,16 @@ namespace PhysicalSound
             if (_soundEvents[yourself.getSoundMaterial()].TryGetValue(other.getSoundMaterial(), out desc)) {
                 string path;
                 desc.getPath(out path);
-                yourself.getEventEmitter().Event = path;
-                yourself.getEventEmitter().Play();
+                playEvent(yourself, path);
             }
 
             else { // Else, play each sound material default sound
                 string path;
                 _soundEvents[yourself.getSoundMaterial()][yourself.getSoundMaterial()].getPath(out path);
-                yourself.getEventEmitter().Event = path;
+                playEvent(yourself, path);
 
                 _soundEvents[other.getSoundMaterial()][other.getSoundMaterial()].getPath(out path);
-                other.getEventEmitter().Event = path;
-
-                yourself.getEventEmitter().Play();
-                other.getEventEmitter().Play();
+                playEvent(other, path);
             }
         }
 
@@ -128,8 +123,14 @@ namespace PhysicalSound
 
             string path;
             _soundEvents[yourself.getSoundMaterial()][yourself.getSoundMaterial()].getPath(out path);
-            yourself.getEventEmitter().Event = path;
-            yourself.getEventEmitter().Play();
+            playEvent(yourself, path);
+        }
+
+        private static void playEvent(SoundCollider soundcollider, string path) {
+            FMOD.Studio.EventInstance instance = FMODUnity.RuntimeManager.CreateInstance(path);
+            instance.setParameterByName("size", soundcollider.getWorldFixedSize());
+            FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, soundcollider.transform, (Rigidbody)null);
+            instance.start();
         }
 
         public static int materialCount() {
