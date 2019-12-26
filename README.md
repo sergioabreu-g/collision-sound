@@ -15,7 +15,7 @@ to setup the material interactions and its parameters, so
 Unity:
 - Download the [latest Unity package](https://github.com/Sag-Dev/physical-sound/releases).
 - Import the package into your Unity project (you can drag and drop)
-- Add SoundCollider scripts to your objects.
+- Add SoundCollider scripts to the objects you want to play sounds on collision.
 - To be made...
 
 Fmod Studio:
@@ -49,6 +49,10 @@ explanation of the changes made.
 # Authors
 - [Sergio Abreu García](https://sag-dev.com)
 - [Diego Martínez Simarro](https://github.com/dimart10)
+
+# Acknowledgements
+This is the final project for '*Sound in Videogames*' subject ([Universidad Complutense de Madrid](https://www.ucm.es/)), imparted by:
+- [Jaime Sánchez Hernández](http://gpd.sip.ucm.es/jaime/)
 
 # License
 This project is under the
