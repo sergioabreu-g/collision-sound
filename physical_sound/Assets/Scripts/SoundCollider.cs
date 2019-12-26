@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PhysicalSound
+namespace CollisionSound
 {
     public class SoundCollider : MonoBehaviour
     {
@@ -32,13 +32,13 @@ namespace PhysicalSound
         private void collisionSound(SoundCollider collidedWith)
         {
             updateSize();
-            Manager.collisionDetected(this, collidedWith);
+            Manager.collisionDetected(this, collidedWith, transform.position, 0);
         }
 
         private void genericCollisionSound()
         {
             updateSize();
-            Manager.genericCollisionDetected(this);
+            Manager.genericCollisionDetected(this, transform.position, 0);
         }
 
         private void updateSize() {

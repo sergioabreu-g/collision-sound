@@ -5,13 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace PhysicalSound
+namespace CollisionSound
 {
+    struct SoundCollision {
+        public SoundCollision(SoundCollider yourself, SoundCollider other, Vector3 pos, float force) {
+            _yourself = yourself;
+            _other = other;
+            _pos = pos;
+            _force = force;
+        }
+
+        public SoundCollider _yourself, _other;
+        public Vector3 _pos;
+        public float _force;
+    }
+
     static class Manager
     {
         // 2D Matrix of event descriptions for the collisions between materials
         static private Dictionary<string, Dictionary<string, FMOD.Studio.EventDescription>> _soundEvents;
-        static private List<Tuple<SoundCollider, SoundCollider>> _collisions;
+        static private List<SoundCollision> _collisions;
         static private string[] _materialNames;
         
         static Manager() {
@@ -20,6 +33,7 @@ namespace PhysicalSound
             FMOD.Studio.EventDescription[] eventDescriptions;
             bank.getEventList(out eventDescriptions);
 
+            _collisions = new List<SoundCollision>();
             _soundEvents = new Dictionary<string, Dictionary<string, FMOD.Studio.EventDescription>>();
 
             foreach (FMOD.Studio.EventDescription description in eventDescriptions)
@@ -66,39 +80,55 @@ namespace PhysicalSound
             _soundEvents.Keys.CopyTo(_materialNames, 0);
         }
 
-        public static void collisionDetected(SoundCollider yourself, SoundCollider other)
+        public static void collisionDetected(SoundCollider yourself, SoundCollider other, Vector3 pos, float force)
         {
-            if (_collisions == null) _collisions = new List<Tuple<SoundCollider, SoundCollider>>();
+            if (yourself == null) {
+#if UNITY_EDITOR
+                Debug.LogError("Bad SoundCollision encountered: 'SoundCollision.yourself' cannot be null.");
+#endif
+                return;
+            }
 
-            Tuple<SoundCollider, SoundCollider> collision = new Tuple<SoundCollider, SoundCollider>(yourself, other);
+            // Switch to generic collision if there's only one SoundCollider
+            if (other == null) genericCollisionDetected(yourself, pos, force);
 
-            foreach (Tuple<SoundCollider, SoundCollider> c in _collisions) {
-                if (c.Item1 == collision.Item2 && c.Item2 == collision.Item1)
+            // When two SoundColliders collide, they both detect the collision.
+            // This allows to get rid of duplicates and only play it once.
+            foreach (SoundCollision c in _collisions) {
+                if (c._yourself == other && c._other == yourself)
                 {
                     _collisions.Remove(c);
                     return;
                 }
             }
 
+            SoundCollision collision = new SoundCollision(yourself, other, pos, force);
             _collisions.Add(collision);
-            playCollisionSound(yourself, other);
+            playCollision(collision);
         }
 
-        public static void genericCollisionDetected(SoundCollider yourself)
+        public static void genericCollisionDetected(SoundCollider yourself, Vector3 pos, float force)
         {
-            playCollisionSound(yourself);
+            playGenericCollision(new SoundCollision(yourself, null, pos, force));
         }
 
-        private static void playCollisionSound(SoundCollider yourself, SoundCollider other)
+        private static void playCollision(SoundCollision collision)
         {
-            if (!_soundEvents.ContainsKey(yourself.getSoundMaterial()) || !_soundEvents.ContainsKey(other.getSoundMaterial())) {
+            SoundCollider yourself = collision._yourself, other = collision._other;
+
+            // Log an error if one of the materials doesn't exist in the Fmod project
+            if (!_soundEvents.ContainsKey(yourself.getSoundMaterial())) {
                 errorMaterialNotFound(yourself.getSoundMaterial());
+                return;
+            }
+            if (!_soundEvents.ContainsKey(other.getSoundMaterial())) {
+                errorMaterialNotFound(other.getSoundMaterial());
                 return;
             }
 
             // If there is a particular event defined for this collision, play it
             FMOD.Studio.EventDescription desc;
-            if (_soundEvents[yourself.getSoundMaterial()].TryGetValue(other.getSoundMaterial(), out desc)) {
+            if (_soundEvents[collision._yourself.getSoundMaterial()].TryGetValue(other.getSoundMaterial(), out desc)) {
                 string path;
                 desc.getPath(out path);
                 playEvent(yourself, path);
@@ -114,8 +144,10 @@ namespace PhysicalSound
             }
         }
 
-        private static void playCollisionSound(SoundCollider yourself)
+        private static void playGenericCollision(SoundCollision collision)
         {
+            SoundCollider yourself = collision._yourself;
+
             if (!_soundEvents.ContainsKey(yourself.getSoundMaterial())) {
                 errorMaterialNotFound(yourself.getSoundMaterial());
                 return;
@@ -129,7 +161,7 @@ namespace PhysicalSound
         private static void playEvent(SoundCollider soundcollider, string path) {
             FMOD.Studio.EventInstance instance = FMODUnity.RuntimeManager.CreateInstance(path);
             instance.setParameterByName("size", soundcollider.getWorldFixedSize());
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(instance, soundcollider.transform, (Rigidbody)null);
+            instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(soundcollider.transform.position));
             instance.start();
         }
 

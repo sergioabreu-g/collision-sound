@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 320529917}
   - component: {fileID: 320529916}
   - component: {fileID: 320529915}
-  - component: {fileID: 320529913}
   - component: {fileID: 320529912}
   m_Layer: 0
   m_Name: Metal
@@ -154,32 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundMaterial: wood
+  _soundMaterial: metal
   _sizeFactor: 1
   requireAnotherSoundMaterial: 0
---- !u!114 &320529913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320529911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/wood/wood
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!54 &320529915
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -489,7 +465,6 @@ GameObject:
   - component: {fileID: 720188156}
   - component: {fileID: 720188155}
   - component: {fileID: 720188154}
-  - component: {fileID: 720188152}
   - component: {fileID: 720188151}
   m_Layer: 0
   m_Name: Glass
@@ -510,32 +485,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundMaterial: wood
+  _soundMaterial: glass
   _sizeFactor: 1
   requireAnotherSoundMaterial: 0
---- !u!114 &720188152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 720188150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/wood/wood
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!54 &720188154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -796,7 +748,6 @@ GameObject:
   - component: {fileID: 1143052424}
   - component: {fileID: 1143052423}
   - component: {fileID: 1143052422}
-  - component: {fileID: 1143052428}
   - component: {fileID: 1143052421}
   m_Layer: 0
   m_Name: Small Wood
@@ -909,35 +860,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1143052428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143052420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/wood/wood
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params:
-  - Name: speed
-    Value: 0
-  - Name: size
-    Value: 0
-  - Name: mass
-    Value: 0
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1162918941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,16 +1075,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07db0a835b50dc46b3f3e60a5110f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1600
+  speed: 120000
   jumpForce: 35000
-  cameraSensitivity: 1
+  cameraSensitivity: 100
   ui_manager: {fileID: 652658613}
   spawnable: {fileID: 5498646080226837433, guid: c4f9d3ea9ef97ce438892d3afba881e1,
     type: 3}
-  spawnMaxForce: 2300
-  spawnMinForce: 350
+  spawnMaxForce: 2800
+  spawnMinForce: 200
   spawnDistance: 1
-  shotLoadTime: 1.5
+  shotLoadTime: 1
   _currentMaterial: 
   _currentMaterialIndex: 0
 --- !u!4 &1549769323
@@ -1173,7 +1095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1549769319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.5, z: -13.5}
+  m_LocalPosition: {x: 0, y: 10.81, z: -13.5}
   m_LocalScale: {x: 1, y: 1.7, z: 1}
   m_Children:
   - {fileID: 963194228}

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float jumpForce = 500;
     public float cameraSensitivity = 1;
     public UIManager ui_manager;
-    public PhysicalSound.SoundCollider spawnable;
+    public CollisionSound.SoundCollider spawnable;
     public float spawnMaxForce = 1500;
     public float spawnMinForce = 500;
 
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
         if (_cam == null)
             Debug.LogError("Player camera is missing.");
 
-        _currentMaterial = PhysicalSound.Manager.getMaterialNames()[_currentMaterialIndex];
+        _currentMaterial = CollisionSound.Manager.getMaterialNames()[_currentMaterialIndex];
         ui_manager.changeMaterial(_currentMaterial);
     }
 
@@ -77,9 +77,9 @@ public class Player : MonoBehaviour
         int extra = Input.GetAxis("Mouse ScrollWheel") > 0 ? 1 : -1;
 
         // Loop the index
-        _currentMaterialIndex = (_currentMaterialIndex + PhysicalSound.Manager.materialCount() + extra)
-                                    % PhysicalSound.Manager.materialCount();
-        _currentMaterial = PhysicalSound.Manager.getMaterialNames()[_currentMaterialIndex];
+        _currentMaterialIndex = (_currentMaterialIndex + CollisionSound.Manager.materialCount() + extra)
+                                    % CollisionSound.Manager.materialCount();
+        _currentMaterial = CollisionSound.Manager.getMaterialNames()[_currentMaterialIndex];
 
         ui_manager.changeMaterial(_currentMaterial);
     }
@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
             shotTimer += Time.deltaTime;
         }
         else if (shotTimer > 0) {
-            PhysicalSound.SoundCollider spawned = Instantiate(spawnable);
+            CollisionSound.SoundCollider spawned = Instantiate(spawnable);
             spawned.transform.position = _cam.transform.position + _cam.transform.forward * spawnDistance;
             spawned.setSoundMaterial(_currentMaterial);
             Rigidbody rb = spawned.GetComponent<Rigidbody>();
