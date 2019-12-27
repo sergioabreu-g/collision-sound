@@ -29,13 +29,13 @@ namespace CollisionSound
                 Debug.LogWarning("No collider found. You must have a collider in order to use SoundCollider.");
         }
 
-        private void collisionSound(SoundCollider collidedWith)
+        private void collisionSound(SoundCollider collidedWith, Vector3 pos, float force)
         {
             updateSize();
             Manager.collisionDetected(this, collidedWith, transform.position, 0);
         }
 
-        private void genericCollisionSound()
+        private void genericCollisionSound(Vector3 pos, float force)
         {
             updateSize();
             Manager.genericCollisionDetected(this, transform.position, 0);
@@ -50,33 +50,45 @@ namespace CollisionSound
         private void OnCollisionEnter(Collision collision)
         {
             SoundCollider collidedWith = collision.gameObject.GetComponent<SoundCollider>();
+            Vector3 pos = collision.GetContact(0).point;
+            float vel = collision.relativeVelocity.magnitude;
+
             if (collidedWith != null)
-                collisionSound(collidedWith);
-            else if (!requireAnotherSoundMaterial) genericCollisionSound();
+                collisionSound(collidedWith, pos, vel);
+            else if (!requireAnotherSoundMaterial) genericCollisionSound(pos, vel);
         }
 
         private void OnTriggerEnter(Collider other)
         {
             SoundCollider collidedWith = other.gameObject.GetComponent<SoundCollider>();
+            Vector3 pos = other.ClosestPointOnBounds(transform.position);
+            float vel = 0;
+
             if (collidedWith != null)
-                collisionSound(collidedWith);
-            else if (!requireAnotherSoundMaterial) genericCollisionSound();
+                collisionSound(collidedWith, pos, vel);
+            else if (!requireAnotherSoundMaterial) genericCollisionSound(pos, vel);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
             SoundCollider collidedWith = collision.gameObject.GetComponent<SoundCollider>();
+            Vector3 pos = collision.GetContact(0).point;
+            float vel = collision.relativeVelocity.magnitude;
+
             if (collidedWith != null)
-                collisionSound(collidedWith);
-            else if (!requireAnotherSoundMaterial) genericCollisionSound();
+                collisionSound(collidedWith, pos, vel);
+            else if (!requireAnotherSoundMaterial) genericCollisionSound(pos, vel);
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            SoundCollider collidedWith = collision.gameObject.GetComponent<SoundCollider>();
+            SoundCollider collidedWith = other.gameObject.GetComponent<SoundCollider>();
+            Vector3 pos = other.ClosestPoint(transform.position);
+            float vel = 0;
+
             if (collidedWith != null)
-                collisionSound(collidedWith);
-            else if (!requireAnotherSoundMaterial) genericCollisionSound();
+                collisionSound(collidedWith, pos, vel);
+            else if (!requireAnotherSoundMaterial) genericCollisionSound(pos, vel);
         }
 
         public void setSoundMaterial(string material) {
