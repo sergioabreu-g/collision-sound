@@ -28,7 +28,26 @@ in FMOD Studio & the GameObjects setup in Unity.
 To be made...
 
 ## Unity
-To be made...
+The only thing you have to handle in Unity are the SoundCollider components.
+Add a SoundCollider to any GameObject you want to make sounds on collisions, write down
+a valid sound material name (setup in the FMOD Studio project as indicated in the previous
+section) and it will work right away.
+
+The following is a description of every attribute of the SoundCollider component, for more advanced usages:
+
+![sound-collider-inspector](https://github.com/Sag-Dev/physical-sound/blob/master/_doc/sound-collider-inspector.png)
+
+- Sound Material:
+- Require Another Sound Collider:
+- Always Play Default Event:
+- Y Axis Is Forward 2D:
+
+- Volume:
+- Mute:
+
+- Size Active:
+- Velocity Active:
+
 
 # Built with
 - [Fmod Studio](https://www.fmod.com/studio)
