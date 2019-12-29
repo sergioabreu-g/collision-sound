@@ -7,17 +7,21 @@ using UnityEngine;
 
 namespace CollisionSound
 {
+    /// <summary>
+    /// Contains the parameters that every collision must receive in order
+    /// to play the sound events
+    /// </summary>
     struct SoundCollision {
-        public SoundCollision(SoundCollider yourself, SoundCollider other, Vector3 pos, float force) {
+        public SoundCollision(SoundCollider yourself, SoundCollider other, Vector3 pos, float velocity) {
             _yourself = yourself;
             _other = other;
             _pos = pos;
-            _force = force;
+            _velocity = velocity;
         }
 
         public SoundCollider _yourself, _other;
         public Vector3 _pos;
-        public float _force;
+        public float _velocity;
     }
 
     static class Manager
@@ -36,6 +40,7 @@ namespace CollisionSound
             _collisions = new List<SoundCollision>();
             _soundEvents = new Dictionary<string, Dictionary<string, FMOD.Studio.EventDescription>>();
 
+            // Iterate through each event path and store all materials and its interactions
             foreach (FMOD.Studio.EventDescription description in eventDescriptions)
             {
                 string path;
@@ -80,7 +85,15 @@ namespace CollisionSound
             _soundEvents.Keys.CopyTo(_materialNames, 0);
         }
 
-        public static void collisionDetected(SoundCollider yourself, SoundCollider other, Vector3 pos, float force)
+        /// <summary>
+        /// Function called from the SoundCollider script when it detects a collision
+        /// between two SoundColliders
+        /// </summary>
+        /// <param name="yourself">First SoundCollider involved in the collision</param>
+        /// <param name="other">Second SoundCollider involved in the collision</param>
+        /// <param name="pos">World position of the collision</param>
+        /// <param name="velocity">Relative velocity of the colliding objects</param>
+        public static void collisionDetected(SoundCollider yourself, SoundCollider other, Vector3 pos, float velocity)
         {
             if (yourself == null) {
 #if UNITY_EDITOR
@@ -90,7 +103,7 @@ namespace CollisionSound
             }
 
             // Switch to generic collision if there's only one SoundCollider
-            if (other == null) genericCollisionDetected(yourself, pos, force);
+            if (other == null) genericCollisionDetected(yourself, pos, velocity);
 
             // When two SoundColliders collide, they both detect the collision.
             // This allows to get rid of duplicates and only play it once.
@@ -102,16 +115,27 @@ namespace CollisionSound
                 }
             }
 
-            SoundCollision collision = new SoundCollision(yourself, other, pos, force);
+            SoundCollision collision = new SoundCollision(yourself, other, pos, velocity);
             _collisions.Add(collision);
             playCollision(collision);
         }
 
+        /// <summary>
+        /// Function called from the SoundCollider script when it detects a collision
+        /// with only one SoundCollider involved
+        /// </summary>
+        /// <param name="yourself">SoundCollider that collided</param>
+        /// <param name="pos">World position of the collision</param>
+        /// <param name="force">Relative velocity of the colliding objects</param>
         public static void genericCollisionDetected(SoundCollider yourself, Vector3 pos, float force)
         {
             playGenericCollision(new SoundCollision(yourself, null, pos, force));
         }
 
+        /// <summary>
+        /// Plays a collision between two SoundColliders
+        /// </summary>
+        /// <param name="collision">SoundCollision struct with all the necessary parameters</param>
         private static void playCollision(SoundCollision collision)
         {
             SoundCollider yourself = collision._yourself, other = collision._other;
@@ -128,49 +152,70 @@ namespace CollisionSound
 
             // If there is a particular event defined for this collision, play it
             FMOD.Studio.EventDescription desc;
-            if (_soundEvents[collision._yourself.getSoundMaterial()].TryGetValue(other.getSoundMaterial(), out desc)) {
+            if ((!yourself.alwaysPlayDefaultEvent && !other.alwaysPlayDefaultEvent) &&
+                _soundEvents[collision._yourself.getSoundMaterial()].TryGetValue(other.getSoundMaterial(), out desc)) {
                 string path;
                 desc.getPath(out path);
-                playEvent(yourself, path);
+
+                FMOD.Studio.EventInstance instance = FMODUnity.RuntimeManager.CreateInstance(path);
+
+                // Set the instance parameters (if the SoundCollider has marked them as active)
+                if (yourself.sizeActive && other.sizeActive)
+                    instance.setParameterByName("size", yourself.getWorldSize() + other.getWorldSize()/2);
+                if (yourself.velocityActive && other.velocityActive)
+                    instance.setParameterByName("velocity", collision._velocity);
+
+                instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(collision._pos));
+                instance.start();
             }
-
             else { // Else, play each sound material default sound
-                string path;
-                _soundEvents[yourself.getSoundMaterial()][yourself.getSoundMaterial()].getPath(out path);
-                playEvent(yourself, path);
-
-                _soundEvents[other.getSoundMaterial()][other.getSoundMaterial()].getPath(out path);
-                playEvent(other, path);
+                playGenericCollision(collision);
+                collision._yourself = collision._other;
+                playGenericCollision(collision);
             }
         }
 
+        /// <summary>
+        /// Plays a generic collision
+        /// </summary>
+        /// <param name="collision">SoundCollision struct with all the necessary parameters</param>
         private static void playGenericCollision(SoundCollision collision)
         {
             SoundCollider yourself = collision._yourself;
 
+            // Check if the material of the SoundCollider exists
             if (!_soundEvents.ContainsKey(yourself.getSoundMaterial())) {
                 errorMaterialNotFound(yourself.getSoundMaterial());
                 return;
             }
 
+            // Get the path to its default event
             string path;
             _soundEvents[yourself.getSoundMaterial()][yourself.getSoundMaterial()].getPath(out path);
-            playEvent(yourself, path);
-        }
 
-        private static void playEvent(SoundCollider soundcollider, string path) {
             FMOD.Studio.EventInstance instance = FMODUnity.RuntimeManager.CreateInstance(path);
-            instance.setParameterByName("size", soundcollider.getWorldSize());
-            instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(soundcollider.transform.position));
+
+            // Set the instance parameters (if the SoundCollider has marked them as active)
+            if (yourself.sizeActive) instance.setParameterByName("size", yourself.getWorldSize());
+            if (yourself.velocityActive) instance.setParameterByName("velocity", collision._velocity);
+
+            instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(collision._pos));
             instance.start();
         }
 
+        /// <summary>
+        /// Gets the total number of materials
+        /// </summary>
+        /// <returns>Total number of materials</returns>
         public static int materialCount() {
             return _soundEvents.Count;
         }
 
+        /// <summary>
+        /// Gets an array with all the material names
+        /// </summary>
+        /// <returns>Array with all the material names</returns>
         public static string[] getMaterialNames() {
-
             return _materialNames;
         }
 
