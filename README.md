@@ -1,4 +1,5 @@
-# Collision Sound for Unity
+# Collision Sound for Unity </br> ![status-on-development](https://img.shields.io/badge/On-DEVELOPMENT-ff69b4) ![unity](https://img.shields.io/badge/Unity-2019-informational) ![fmod-studio](https://img.shields.io/badge/FMOD-Studio-informational)
+
 Collision Sound aims to be an easy and powerful way of adding sound to
 object collisions in [Unity](https://unity.com/).
 
@@ -12,17 +13,21 @@ to setup the material interactions and its parameters, so
 - [Unity](https://unity.com/)
 
 ## Installing
-Unity:
-- Download the [latest Unity package](https://github.com/Sag-Dev/physical-sound/releases).
-- Import the package into your Unity project (you can drag and drop)
-- Add SoundCollider scripts to the objects you want to play sounds on collision.
-- To be made...
+Before continuing, you should already have Unity and Fmod Studio installed.
 
-Fmod Studio:
-- Open the project under your assets folder.
-- To be made...
+- Download the [latest Unity package](https://github.com/Sag-Dev/physical-sound/releases)
+- Import the package into your Unity project, it should now be ready
+- Open the FMOD Studio project under your Unity project 'Assets/Packages/CollisionSound/fmod_project'
+- Keep reading to learn how to configure your collision events.
 
 # How to use
+This guide will be divided into two separate steps: the sound events configuration
+in FMOD Studio & the GameObjects setup in Unity.
+
+## FMOD Studio
+To be made...
+
+## Unity
 To be made...
 
 # Built with
