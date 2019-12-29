@@ -23,11 +23,18 @@ namespace CollisionSound
         public bool alwaysPlayDefaultEvent = false;
 
         [Tooltip("ONLY FOR 2D COLLIDERS. If set to true, Y axis will " +
-                "be treated as forward/backward, instead of up/down")]
+                "be treated as forward/backward when positioning the sounds in 3D" +
+                ", instead of up/down.")]
         public bool yAxisIsForward2D = false;
 
-        [Header("Parameters")]
-        public bool sizeActive = true, velocityActive = true;
+        [Header("Sound parameters")]
+        [Range(0, 1)]
+        public float volume = 1.0f;
+        public bool mute = false;
+
+        [Header("FMOD Studio parameters")]
+        public bool sizeActive = true;
+        public bool velocityActive = true;
 
         private void Start() {
             _collider = GetComponent<Collider>();

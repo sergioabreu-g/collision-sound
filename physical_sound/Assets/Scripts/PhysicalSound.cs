@@ -140,6 +140,9 @@ namespace CollisionSound
         {
             SoundCollider yourself = collision._yourself, other = collision._other;
 
+            if (yourself.mute || other.mute || (yourself.volume <= 0 && other.volume <= 0))
+                return;
+
             // Log an error if one of the materials doesn't exist in the Fmod project
             if (!_soundEvents.ContainsKey(yourself.getSoundMaterial())) {
                 errorMaterialNotFound(yourself.getSoundMaterial());
@@ -164,6 +167,7 @@ namespace CollisionSound
                     instance.setParameterByName("size", yourself.getWorldSize() + other.getWorldSize()/2);
                 if (yourself.velocityActive && other.velocityActive)
                     instance.setParameterByName("velocity", collision._velocity);
+                instance.setVolume(Mathf.Clamp((yourself.volume + other.volume) / 2, 0, 1));
 
                 instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(collision._pos));
                 instance.start();
@@ -183,6 +187,9 @@ namespace CollisionSound
         {
             SoundCollider yourself = collision._yourself;
 
+            if (yourself.mute || yourself.volume <= 0)
+                return;
+
             // Check if the material of the SoundCollider exists
             if (!_soundEvents.ContainsKey(yourself.getSoundMaterial())) {
                 errorMaterialNotFound(yourself.getSoundMaterial());
@@ -198,6 +205,7 @@ namespace CollisionSound
             // Set the instance parameters (if the SoundCollider has marked them as active)
             if (yourself.sizeActive) instance.setParameterByName("size", yourself.getWorldSize());
             if (yourself.velocityActive) instance.setParameterByName("velocity", collision._velocity);
+            instance.setVolume(Mathf.Clamp((yourself.volume) / 2, 0, 1));
 
             instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(collision._pos));
             instance.start();

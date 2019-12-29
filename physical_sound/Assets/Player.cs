@@ -95,7 +95,6 @@ public class Player : MonoBehaviour
             Rigidbody rb = spawned.GetComponent<Rigidbody>();
             float currentForce = spawnMaxForce * (shotTimer / shotLoadTime);
             rb.AddForce(_cam.transform.forward * Mathf.Clamp(currentForce, spawnMinForce, spawnMaxForce));
-
             shotTimer = 0;
         }
     }
