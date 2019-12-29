@@ -160,7 +160,7 @@ namespace CollisionSound
 
         private static void playEvent(SoundCollider soundcollider, string path) {
             FMOD.Studio.EventInstance instance = FMODUnity.RuntimeManager.CreateInstance(path);
-            instance.setParameterByName("size", soundcollider.getWorldFixedSize());
+            instance.setParameterByName("size", soundcollider.getWorldSize());
             instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(soundcollider.transform.position));
             instance.start();
         }

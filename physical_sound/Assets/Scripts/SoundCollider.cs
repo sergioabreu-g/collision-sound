@@ -11,13 +11,8 @@ namespace CollisionSound
         [SerializeField]
         private string _soundMaterial = "wood";
 
-        [Tooltip("Object size (determined by its collider) will be multiplied by this factor when setting " +
-                    "the parameter 'size' of the FMOD Event.")]
-        [SerializeField]
-        private float _sizeFactor = 1;
-
         private Collider _collider;
-        private float _worldSize, _worldFixedSize;
+        private float _worldSize;
 
         [Tooltip("If set to true, sounds will only be played if the" +
             "other gameobject also has a SoundMaterial component.")]
@@ -43,10 +38,11 @@ namespace CollisionSound
 
         private void updateSize() {
             _worldSize = _collider.bounds.size.magnitude;
-            _worldFixedSize = _sizeFactor * _worldSize;
         }
 
+
         // Collision detection for every possible scenario
+        // Triggers will always detect their collisions with velocity 0
         private void OnCollisionEnter(Collision collision)
         {
             SoundCollider collidedWith = collision.gameObject.GetComponent<SoundCollider>();
@@ -99,20 +95,8 @@ namespace CollisionSound
             return _soundMaterial;
         }
 
-        public void setSizeFactor(float sizeFactor) {
-            _sizeFactor = sizeFactor;
-        }
-
-        public float getSizeFactor() {
-            return _sizeFactor;
-        }
-
         public float getWorldSize() {
             return _worldSize;
-        }
-
-        public float getWorldFixedSize() {
-            return _worldFixedSize;
         }
     }
 }
