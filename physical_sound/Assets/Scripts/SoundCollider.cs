@@ -29,7 +29,12 @@ namespace CollisionSound
 
         [Header("Sound parameters")]
         [Range(0, 1)]
+        [Tooltip("Volume the events of this SoundCollider will be played this. When playing specific interaction" +
+                    "events, the volume will be the average of both volumes.")]
         public float volume = 1.0f;
+
+        [Tooltip("Mute the SoundCollider.When two SoundColliders collide, if one of them is muted(or both)" + 
+            "the event will not be played.")]
         public bool mute = false;
 
         [Header("FMOD Studio parameters")]
