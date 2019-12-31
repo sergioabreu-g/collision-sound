@@ -56,20 +56,21 @@ the event will be automatically adjusted on runtime depending on the current siz
 
 
 ## Custom parameters
-STILL NOT IMPLEMENTED
+You can setup custom parameters for any of your events, and then set their values from code in Unity. To do so, just add any parameter to your collision events in FMOD Studio, then call call the method `setCustomParam(string parameter, float value)` of the SoundCollider that will be playing that event to set its value. You can also set all parameters at once by passing a `Dictionary<string, float>`, as well as get the parameters you've already set.
+
+The custom parameters you set from code belong to the SoundCollider, not to its events. That means you can set any parameters for any SoundCollider, even if its events do not implement that parameter. That also means that when you call any of its `get` methods, **it will only return the parameters you've already setup from code**, not the ones you've configured in FMOD Studio for any of its events.
 
 ## Unity
-The only thing you have to handle in Unity are the `SoundCollider` components.
-**Add a SoundCollider to any GameObject you want to make sounds on collisions**, write down
-a valid sound material name (setup in the FMOD Studio project as indicated in the previous
-section) and it will work right away.
+The only two things you have to handle in Unity are the `SoundCollider` components and the FMOD Studio Listener.
+**Add an FMOD Studio Listener** to the object that will receive the sound (usually the main player of your game), then
+**add a SoundCollider to any GameObject you want to make sounds on collisions**.
 
-The following is a description of every attribute of the SoundCollider component, for more advanced usages:
+The following is a description of every attribute of the SoundCollider component:
 
 ![sound-collider-inspector](https://github.com/Sag-Dev/physical-sound/blob/master/_doc/sound-collider-inspector.png)
 
 ### General
-- `Sound Material`: the name of this object's material
+- `Sound Material`: the name of this object's sound material (setup in the FMOD Studio project as explained above)
 - `Require Another Sound Collider`: if set to true, sounds will only be played if the other gameobject
 also has a SoundMaterial component.
 - `Always Play Default Event`: if set to true, this SoundCollider will always play its default event
