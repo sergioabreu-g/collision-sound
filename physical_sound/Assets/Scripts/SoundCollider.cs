@@ -41,10 +41,13 @@ namespace CollisionSound
         public bool sizeActive = true;
         public bool velocityActive = true;
 
+        private Dictionary<string, float> _customParams;
+
         private void Start() {
             _collider = GetComponent<Collider>();
             if (_collider == null)
                 Debug.LogWarning("No collider found. You must have a collider in order to use SoundCollider.");
+            _customParams = new Dictionary<string, float>();
         }
 
         /// <summary>
@@ -131,6 +134,7 @@ namespace CollisionSound
         /// </summary>
         /// <param name="material">Material name</param>
         public void setSoundMaterial(string material) {
+            
             _soundMaterial = material;
         }
 
@@ -148,6 +152,44 @@ namespace CollisionSound
         /// <returns>magnitude of the object's size in world units</returns>
         public float getWorldSize() {
             return _worldSize;
+        }
+
+        /// <summary>
+        /// Get a dictionary with all the custom parameters that have been already set
+        /// </summary>
+        /// <returns>A dictionary with all the custom parameters that have been already set</returns>
+        public Dictionary<string, float> getCustomParams() {
+            return _customParams;
+        }
+
+        /// <summary>
+        /// Set the custom parameters of this object to the given ones
+        /// </summary>
+        /// <param name="customParams">Dictionary with the custom parameters as pairs [name, value]</param>
+        public void setCustomParams(Dictionary<string, float> customParams) {
+            _customParams = customParams;
+        }
+
+        /// <summary>
+        /// Set a custom parameter to the given value
+        /// </summary>
+        /// <param name="parameter">Parameter name</param>
+        /// <param name="value">Parameter value</param>
+        public void setCustomParam(string parameter, float value) {
+            _customParams[parameter] = value;
+        }
+
+        /// <summary>
+        /// Gets a custom parameter that has been already set
+        /// </summary>
+        /// <param name="parameter">Name of the custom parameter that has been already set</param>
+        /// <returns>The current value of the parameter</returns>
+        public float getCustomParam(string parameter) {
+            if (_customParams.ContainsKey(parameter))
+                return _customParams[parameter];
+
+            Debug.Log("Parameter " + parameter + " not set.");
+            return 0;
         }
     }
 }

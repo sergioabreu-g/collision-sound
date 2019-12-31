@@ -162,13 +162,29 @@ namespace CollisionSound
 
                 FMOD.Studio.EventInstance instance = FMODUnity.RuntimeManager.CreateInstance(path);
 
-                // Set the instance parameters (if the SoundCollider has marked them as active)
+                // Set the instance built-in parameters (if the SoundCollider has marked them as active)
                 if (yourself.sizeActive && other.sizeActive)
                     instance.setParameterByName("size", yourself.getWorldSize() + other.getWorldSize()/2);
                 if (yourself.velocityActive && other.velocityActive)
                     instance.setParameterByName("velocity", collision._velocity);
-                instance.setVolume(Mathf.Clamp((yourself.volume + other.volume) / 2, 0, 1));
 
+                // Set the custom parameters (iterate both dictionaries and average the common entries)
+                foreach (KeyValuePair<string, float> customParam in yourself.getCustomParams()) {
+                    float auxValue = customParam.Value;
+                    if (other.getCustomParams().ContainsKey(customParam.Key))
+                        auxValue = (auxValue + other.getCustomParam(customParam.Key)) / 2;
+
+                    instance.setParameterByName(customParam.Key, auxValue);
+                }
+                foreach (KeyValuePair<string, float> customParam in other.getCustomParams()) {
+                    float auxValue = customParam.Value;
+                    if (yourself.getCustomParams().ContainsKey(customParam.Key))
+                        auxValue = (auxValue + yourself.getCustomParam(customParam.Key)) / 2;
+
+                    instance.setParameterByName(customParam.Key, auxValue);
+                }
+
+                instance.setVolume(Mathf.Clamp((yourself.volume + other.volume) / 2, 0, 1));
                 instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(collision._pos));
                 instance.start();
             }
@@ -202,11 +218,16 @@ namespace CollisionSound
 
             FMOD.Studio.EventInstance instance = FMODUnity.RuntimeManager.CreateInstance(path);
 
-            // Set the instance parameters (if the SoundCollider has marked them as active)
+            // Set the instance built-in parameters (if the SoundCollider has marked them as active)
             if (yourself.sizeActive) instance.setParameterByName("size", yourself.getWorldSize());
             if (yourself.velocityActive) instance.setParameterByName("velocity", collision._velocity);
-            instance.setVolume(Mathf.Clamp((yourself.volume) / 2, 0, 1));
 
+            // Set the custom parameters
+            foreach (KeyValuePair<string, float> customParam in yourself.getCustomParams()) {
+                instance.setParameterByName(customParam.Key, customParam.Value);
+            }
+
+            instance.setVolume(Mathf.Clamp((yourself.volume) / 2, 0, 1));
             instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(collision._pos));
             instance.start();
         }
