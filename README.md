@@ -42,34 +42,17 @@ The FMOD Studio project structure can be summarized as follows:
 - Do not duplicate specific events by creating them under both material folders. If you do, one of them will be shadowed and it
 can cause undesired behaviours.
 
-## Built-in parameters
-There are currently 2 built-in parameters synchronized with Unity, `size` and `velocity`.
-If you setup parameters with those names in your events, they will be automatically set by
-Unity on runtime.
-
-So, for example, if you define a pitch decline as size gets bigger for one event, the pitch of
-the event will be automatically adjusted on runtime depending on the current size of the object.
-
-- `size`: magnitude of the object's collider size Vector3 (in world units).
-- `velocity`: magnitude of the relative velocity Vector3 between the bodies of the collision
-(if using triggers, it will be always 0)
-
-
-## Custom parameters
-STILL NOT IMPLEMENTED
-
 ## Unity
-The only thing you have to handle in Unity are the `SoundCollider` components.
-**Add a SoundCollider to any GameObject you want to make sounds on collisions**, write down
-a valid sound material name (setup in the FMOD Studio project as indicated in the previous
-section) and it will work right away.
+The only two things you have to handle in Unity are the `SoundCollider` components and the FMOD Studio Listener.
+**Add an FMOD Studio Listener** to the object that will receive the sound (usually the main player of your game), then
+**add a SoundCollider to any GameObject you want to make sounds on collisions**.
 
-The following is a description of every attribute of the SoundCollider component, for more advanced usages:
+The following is a description of every attribute of the SoundCollider component:
 
 ![sound-collider-inspector](https://github.com/Sag-Dev/physical-sound/blob/master/_doc/sound-collider-inspector.png)
 
 ### General
-- `Sound Material`: the name of this object's material
+- `Sound Material`: the name of this object's sound material (setup in the FMOD Studio project as explained above)
 - `Require Another Sound Collider`: if set to true, sounds will only be played if the other gameobject
 also has a SoundMaterial component.
 - `Always Play Default Event`: if set to true, this SoundCollider will always play its default event
@@ -86,6 +69,30 @@ will not be played.
 ### FMOD Studio parameters
 - `Size Active`: whether to set parameter size when playing the events
 - `Velocity Active`: whether to set parameter velocity when playing the events
+
+## Parameters & automations
+One of the more powerful tools of FMOD Studio is the parametrization & automation, and they're
+integrated with Collision Sound. Keep reading to learn how to use them.
+
+*For specific interaction events between two SoundColliders, the value of a parameter will be
+the average of both their values (if both SoundColliders have the same parameter).*
+
+### Built-in parameters
+There are currently 2 built-in parameters synchronized with Unity, `size` and `velocity`.
+If you setup parameters with those names in your events, they will be automatically set by
+Unity on runtime.
+
+So, for example, if you define a pitch decline as size gets bigger for one event, the pitch of
+the event will be automatically adjusted on runtime depending on the current size of the object.
+
+- `size`: magnitude of the object's collider size Vector3 (in world units).
+- `velocity`: magnitude of the relative velocity Vector3 between the bodies of the collision
+(if using triggers, it will be always 0)
+
+### Custom parameters
+You can setup custom parameters for any of your events, and then set their values from code in Unity. To do so, just add any parameter to your collision events in FMOD Studio, then call call the method `setCustomParam(string parameter, float value)` of the SoundCollider that will be playing that event to set its value. You can also set all parameters at once by passing a `Dictionary<string, float>`, as well as get the parameters you've already set.
+
+The custom parameters you set from code belong to the SoundCollider, not to its events. That means you can set any parameters for any SoundCollider, even if its events do not implement that parameter. That also means that when you call any of its `get` methods, **it will only return the parameters you've already setup from code**, not the ones you've configured in FMOD Studio for any of its events.
 
 # Built with
 - [Fmod Studio](https://www.fmod.com/studio)
