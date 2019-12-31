@@ -184,8 +184,14 @@ namespace CollisionSound
                     instance.setParameterByName(customParam.Key, auxValue);
                 }
 
+                Vector3 pos;
+                if (yourself.yAxisIsForward2D || other.yAxisIsForward2D)
+                    pos = new Vector3(collision._pos.x, 0, collision._pos.y);
+                else
+                    pos = new Vector3(collision._pos.x, collision._pos.y, collision._pos.z);
+
                 instance.setVolume(Mathf.Clamp((yourself.volume + other.volume) / 2, 0, 1));
-                instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(collision._pos));
+                instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(pos));
                 instance.start();
             }
             else { // Else, play each sound material default sound
@@ -227,8 +233,14 @@ namespace CollisionSound
                 instance.setParameterByName(customParam.Key, customParam.Value);
             }
 
+            Vector3 pos = collision._pos;
+            if (yourself.yAxisIsForward2D) {
+                pos.y = collision._pos.z;
+                pos.z = collision._pos.y;
+            }
+
             instance.setVolume(Mathf.Clamp((yourself.volume) / 2, 0, 1));
-            instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(collision._pos));
+            instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(pos));
             instance.start();
         }
 

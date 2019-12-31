@@ -110,7 +110,7 @@ namespace CollisionSound
         private void OnCollisionEnter2D(Collision2D collision)
         {
             SoundCollider collidedWith = collision.gameObject.GetComponent<SoundCollider>();
-            Vector3 pos = collision.GetContact(0).point;
+            Vector2 pos = collision.GetContact(0).point;
             float vel = collision.relativeVelocity.magnitude;
 
             if (collidedWith != null)
@@ -121,7 +121,7 @@ namespace CollisionSound
         private void OnTriggerEnter2D(Collider2D other)
         {
             SoundCollider collidedWith = other.gameObject.GetComponent<SoundCollider>();
-            Vector3 pos = other.ClosestPoint(transform.position);
+            Vector2 pos = other.ClosestPoint(transform.position);
             float vel = 0;
 
             if (collidedWith != null)
