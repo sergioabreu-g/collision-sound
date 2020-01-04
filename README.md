@@ -24,10 +24,19 @@ Before continuing, you should already have Unity and Fmod Studio installed.
 This guide will be divided into two separate steps: the material events configuration
 in FMOD Studio & the GameObjects setup in Unity.
 
-`Every folder & event must be put under the master bank`
-
 ## FMOD Studio
 The FMOD Studio project structure can be summarized as follows:
+
+*If you want to setup your custom FMOD Studio project, instead of using the one
+already configured with the Unity package, read [this](https://www.fmod.com/resources/documentation-unity?version=2.0&page=user-guide.html#setting-up).*
+
+### General
+- All the materials and its events must be under the root folder `SoundMaterials`.
+- Every collision event must be assigned to the `SoundMaterials` bank.
+- Everything outside the `SoundMaterials` folder and bank will be ignored by Collision Sound when
+importing from Unity.
+- You can have any other folders/banks/events on the same FMOD Project, they won't affect Sound Collision
+at all.
 
 ### Materials
 - Every material is defined as a folder with at least its default event.
@@ -45,7 +54,7 @@ can cause undesired behaviours.
 ## Unity
 The only two things you have to handle in Unity are the `SoundCollider` components and the FMOD Studio Listener.
 **Add an FMOD Studio Listener** to the object that will receive the sound (usually the main player of your game), then
-**add a SoundCollider to any GameObject you want to make sounds on collisions**.
+**add a SoundCollider to any GameObject you want to make sounds on collision**.
 
 The following is a description of every attribute of the SoundCollider component:
 
