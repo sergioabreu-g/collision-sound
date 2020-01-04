@@ -10,15 +10,16 @@ to setup the material interactions and its parameters, so
 
 ## Prerequisites
 - [Fmod Studio](https://www.fmod.com/studio)
-- [Unity](https://unity.com/)
+- [Unity](https://unity.com/) (from 2017.4 onwards)
 
 ## Installing
 Before continuing, you should already have Unity and Fmod Studio installed.
 
 - Download the [latest Unity package](https://github.com/Sag-Dev/physical-sound/releases)
 - Import the package into your Unity project, it should now be ready
-- Open the FMOD Studio project under your Unity project 'Assets/Packages/CollisionSound/fmod_project'
-- Keep reading to learn how to configure your collision events.
+- Open the FMOD Studio project under your Unity project 'Assets/Packages/CollisionSound/fmod_project'.
+- If the project's version is different from your FMOD Studio installation, retarget the project
+when opening, and it will work right away.
 
 # How to use
 This guide will be divided into two separate steps: the material events configuration
@@ -37,6 +38,7 @@ already configured with the Unity package, read [this](https://www.fmod.com/reso
 importing from Unity.
 - You can have any other folders/banks/events on the same FMOD Project, they won't affect Sound Collision
 at all.
+- **Remember that every time you change anything on the FMOD Studio project, you'll need to re-build it.**
 
 ### Materials
 - Every material is defined as a folder with at least its default event.
