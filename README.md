@@ -1,7 +1,8 @@
-# Collision Sound for Unity </br> ![status-on-development](https://img.shields.io/badge/On-DEVELOPMENT-ff69b4) ![unity](https://img.shields.io/badge/Unity-2019-informational) ![fmod-studio](https://img.shields.io/badge/FMOD-Studio-informational)
+# Collision Sound for Unity </br> ![status-passing](https://img.shields.io/badge/build-passing-success) ![unity](https://img.shields.io/badge/unity-2017.4_onwards-informational)  ![fmod-studio](https://img.shields.io/badge/fmod-studio-informational)
 
 Collision Sound aims to be an easy and powerful way of adding sound to
-object collisions in [Unity](https://unity.com/).
+object collisions in [Unity](https://unity.com/). You can download the latest Unity package
+[here](https://github.com/Sag-Dev/physical-sound/releases).
 
 # Getting started
 Collision Sound requires the use of [Fmod Studio](https://www.fmod.com/studio)
@@ -17,7 +18,7 @@ Before continuing, you should already have Unity and Fmod Studio installed.
 
 - Download the [latest Unity package](https://github.com/Sag-Dev/physical-sound/releases)
 - Import the package into your Unity project, it should now be ready
-- Open the FMOD Studio project under your Unity project 'Assets/Packages/CollisionSound/fmod_project'.
+- Open the FMOD Studio project from your Unity project 'Assets/FmodProject' folder.
 - If the project's version is different from your FMOD Studio installation, retarget the project
 when opening, and it will work right away.
 
@@ -31,6 +32,8 @@ The FMOD Studio project structure can be summarized as follows:
 *If you want to setup your custom FMOD Studio project, instead of using the one
 already configured with the Unity package, read [this](https://www.fmod.com/resources/documentation-unity?version=2.0&page=user-guide.html#setting-up).*
 
+`Remember that every time you change anything on the FMOD Studio project, you'll need to re-build it.`
+
 ### General
 - All the materials and its events must be under the root folder `SoundMaterials`.
 - Every collision event must be assigned to the `SoundMaterials` bank.
@@ -38,7 +41,6 @@ already configured with the Unity package, read [this](https://www.fmod.com/reso
 importing from Unity.
 - You can have any other folders/banks/events on the same FMOD Project, they won't affect Sound Collision
 at all.
-- **Remember that every time you change anything on the FMOD Studio project, you'll need to re-build it.**
 
 ### Materials
 - Every material is defined as a folder with at least its default event.
