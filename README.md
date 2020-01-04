@@ -2,7 +2,7 @@
 
 Collision Sound aims to be an easy and powerful way of adding sound to
 object collisions in [Unity](https://unity.com/). You can download the latest Unity package
-[here](https://github.com/Sag-Dev/physical-sound/releases).
+[here](https://github.com/Sag-Dev/collision-sound/releases).
 
 # Getting started
 Collision Sound requires the use of [Fmod Studio](https://www.fmod.com/studio)
@@ -16,7 +16,7 @@ to setup the material interactions and its parameters, so
 ## Installing
 Before continuing, you should already have Unity and Fmod Studio installed.
 
-- Download the [latest Unity package](https://github.com/Sag-Dev/physical-sound/releases)
+- Download the [latest Unity package](https://github.com/Sag-Dev/collision-sound/releases)
 - Import the package into your Unity project, it should now be ready
 - Open the FMOD Studio project from your Unity project 'Assets/FmodProject' folder.
 - If the project's version is different from your FMOD Studio installation, retarget the project
@@ -62,7 +62,7 @@ The only two things you have to handle in Unity are the `SoundCollider` componen
 
 The following is a description of every attribute of the SoundCollider component:
 
-![sound-collider-inspector](https://github.com/Sag-Dev/physical-sound/blob/master/_doc/sound-collider-inspector.png)
+![sound-collider-inspector](https://github.com/Sag-Dev/collision-sound/blob/master/_doc/sound-collider-inspector.png)
 
 ### General
 - `Sound Material`: the name of this object's sound material (setup in the FMOD Studio project as explained above)
@@ -138,4 +138,4 @@ This is the final project for '*Sound in Videogames*' subject ([Universidad Comp
 
 # License
 This project is under the
-[Apache License 2.0](https://github.com/Sag-Dev/physical-sound/blob/master/LICENSE).
+[Apache License 2.0](https://github.com/Sag-Dev/collision-sound/blob/master/LICENSE).
