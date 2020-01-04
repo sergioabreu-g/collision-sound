@@ -33,7 +33,13 @@ namespace CollisionSound
         
         static Manager() {
             FMOD.Studio.Bank bank;
-            FMODUnity.RuntimeManager.StudioSystem.getBank("bank:/Master Bank", out bank);
+            FMOD.RESULT result = FMODUnity.RuntimeManager.StudioSystem.getBank("bank:/SoundMaterials", out bank);
+            if (result != FMOD.RESULT.OK) {
+                Debug.LogError("Collision Sound couldn't be initialized, error getting the" +
+                               "'SoundMaterials' bank from the FMOD Studio project.");
+                return;
+            }
+
             FMOD.Studio.EventDescription[] eventDescriptions;
             bank.getEventList(out eventDescriptions);
 
@@ -48,8 +54,12 @@ namespace CollisionSound
                 path = path.Split(':')[1];
 
                 string[] temp = path.Split('/');
-                string material = temp[1];
-                string collidesWith = temp[2];
+                string root = temp[1];
+
+                if (root != "SoundMaterials") continue;
+
+                string material = temp[2];
+                string collidesWith = temp[3];
 
                 // Adds a new material it it hasn't already been added
                 Dictionary<string, FMOD.Studio.EventDescription> materialEvents;
@@ -83,6 +93,9 @@ namespace CollisionSound
             
             _materialNames = new string[_soundEvents.Keys.Count];
             _soundEvents.Keys.CopyTo(_materialNames, 0);
+
+            if (_soundEvents.Count == 0)
+                Debug.LogWarning("No collision events found, check your FMOD Studio project."); 
         }
 
         /// <summary>
