@@ -5,8 +5,9 @@
 [Bb]uilds/
 Assets/AssetStoreTools*
 
-!fmod_project/[Bb]uild/
-!fmod_project/[Bb]uilds/
+collision_sound/Assets/FmodProject/.cache
+!collision_sound/Assets/FmodProject/[Bb]uild/
+!collision_sound/Assets/FmodProject/[Bb]uilds/
 
 # Visual Studio cache directory
 .vs/
