@@ -6,9 +6,9 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Character
-  dynamicFriction: 0.6
-  staticFriction: 0.6
-  bounciness: 0.3
-  frictionCombine: 0
+  m_Name: Wheel
+  dynamicFriction: 0.95
+  staticFriction: 1
+  bounciness: 0.4
+  frictionCombine: 3
   bounceCombine: 0
