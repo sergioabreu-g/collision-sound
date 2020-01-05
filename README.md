@@ -60,6 +60,11 @@ The only two things you have to handle in Unity are the `SoundCollider` componen
 **Add an FMOD Studio Listener** to the object that will receive the sound (usually the main player of your game), then
 **add a SoundCollider to any GameObject you want to make sounds on collision**.
 
+#### Important!
+`The SoundCollider script uses 'OnCollision' events, so in order for it to work, it must have a Rigidbody attached.
+This is not enforced through 'RequireComponent' because if two SoundColliders collide, only one must have it in
+order to play the collision sound, though in many cases it may not be necessary to have one Rigidbody per SoundCollider.`
+
 The following is a description of every attribute of the SoundCollider component:
 
 ![sound-collider-inspector](https://github.com/Sag-Dev/collision-sound/blob/master/_doc/sound-collider-inspector.png)
