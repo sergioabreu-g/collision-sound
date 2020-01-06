@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 115f8c155bc483040ae408006e98c07c
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: antenna
+    100002: backupLights
+    100004: bumper_b
+    100006: bumper_f
+    100008: exhaust_l
+    100010: exhaust_r
+    100012: grill
+    100014: headLights
+    100016: indicatorLights_l
+    100018: indicatorLights_r
+    100020: interieur
+    100022: lights
+    100024: mirror_l
+    100026: mirror_r
+    100028: //RootNode
+    100030: signalLights_01
+    100032: signalLights_02
+    100034: steeringWheel
+    100036: tailLights
+    100038: wheel_b_l
+    100040: wheel_b_r
+    100042: wheel_f_l
+    100044: wheel_f_r
+    400000: antenna
+    400002: backupLights
+    400004: bumper_b
+    400006: bumper_f
+    400008: exhaust_l
+    400010: exhaust_r
+    400012: grill
+    400014: headLights
+    400016: indicatorLights_l
+    400018: indicatorLights_r
+    400020: interieur
+    400022: lights
+    400024: mirror_l
+    400026: mirror_r
+    400028: //RootNode
+    400030: signalLights_01
+    400032: signalLights_02
+    400034: steeringWheel
+    400036: tailLights
+    400038: wheel_b_l
+    400040: wheel_b_r
+    400042: wheel_f_l
+    400044: wheel_f_r
+    2100000: Black
+    2100002: White Paint
+    2100004: Black Paint
+    2100006: Chrome
+    2100008: Windows
+    2100010: Metal
+    2100012: Light_red
+    2100014: 'policeCar Slot #8'
+    2100016: Light_orange
+    2100018: Lights_white
+    2300000: antenna
+    2300002: backupLights
+    2300004: bumper_b
+    2300006: bumper_f
+    2300008: exhaust_l
+    2300010: exhaust_r
+    2300012: grill
+    2300014: headLights
+    2300016: indicatorLights_l
+    2300018: indicatorLights_r
+    2300020: interieur
+    2300022: lights
+    2300024: mirror_l
+    2300026: mirror_r
+    2300028: //RootNode
+    2300030: signalLights_01
+    2300032: signalLights_02
+    2300034: steeringWheel
+    2300036: tailLights
+    2300038: wheel_b_l
+    2300040: wheel_b_r
+    2300042: wheel_f_l
+    2300044: wheel_f_r
+    3300000: antenna
+    3300002: backupLights
+    3300004: bumper_b
+    3300006: bumper_f
+    3300008: exhaust_l
+    3300010: exhaust_r
+    3300012: grill
+    3300014: headLights
+    3300016: indicatorLights_l
+    3300018: indicatorLights_r
+    3300020: interieur
+    3300022: lights
+    3300024: mirror_l
+    3300026: mirror_r
+    3300028: //RootNode
+    3300030: signalLights_01
+    3300032: signalLights_02
+    3300034: steeringWheel
+    3300036: tailLights
+    3300038: wheel_b_l
+    3300040: wheel_b_r
+    3300042: wheel_f_l
+    3300044: wheel_f_r
+    4300000: PoliceCar_01
+    4300002: wheel_f_r
+    4300004: wheel_f_l
+    4300006: wheel_b_r
+    4300008: wheel_b_l
+    4300010: steeringWheel
+    4300012: mirror_r
+    4300014: mirror_l
+    4300016: lights
+    4300018: tailLights
+    4300020: signalLights_02
+    4300022: signalLights_01
+    4300024: indicatorLights_r
+    4300026: indicatorLights_l
+    4300028: headLights
+    4300030: backupLights
+    4300032: interieur
+    4300034: grill
+    4300036: exhaust_r
+    4300038: exhaust_l
+    4300040: bumper_f
+    4300042: bumper_b
+    4300044: antenna
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

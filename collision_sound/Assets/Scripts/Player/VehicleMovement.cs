@@ -15,6 +15,7 @@ public class VehicleMovement : MonoBehaviour
     public List<AxleInfo> axleInfos;
     public float maxMotorTorque;
     public float maxSteeringAngle;
+    public float brakeTorque;
 
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -36,6 +37,7 @@ public class VehicleMovement : MonoBehaviour
     public void FixedUpdate() {
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
+        bool brake = Input.GetButton("Jump");
 
         foreach (AxleInfo axleInfo in axleInfos) {
             if (axleInfo.steering) {
@@ -46,6 +48,10 @@ public class VehicleMovement : MonoBehaviour
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
+
+            axleInfo.rightWheel.brakeTorque = brake ? brakeTorque : 0;
+            axleInfo.leftWheel.brakeTorque = brake ? brakeTorque : 0;
+
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
