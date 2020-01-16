@@ -252,7 +252,7 @@ namespace CollisionSound
                 pos.z = collision._pos.y;
             }
 
-            instance.setVolume(Mathf.Clamp((yourself.volume) / 2, 0, 1));
+            instance.setVolume(Mathf.Clamp(yourself.volume, 0, 1));
             instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(pos));
             instance.start();
         }
