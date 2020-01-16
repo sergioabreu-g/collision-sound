@@ -15,15 +15,50 @@ MonoBehaviour:
   Path: event:/SoundMaterials/car/car
   guid: d71ea694d0280344a5ed74dddd6720e2
   Banks:
-  - {fileID: 4325355331188462350}
+  - {fileID: -8797207688004608531}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 556830652885726608}
+  - {fileID: -6175816007607740062}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8797207688004608531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SoundMaterials.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FmodProject/Build/Desktop/SoundMaterials.bank
+  SubDir: 
+  lastModified: 637148040394454044
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-8655321281405744729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-8362946372248493010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,6 +87,76 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/glass/velocity
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 20
+  Default: 0
+  Exists: 1
+--- !u!114 &-6698992742050007232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 1
+--- !u!114 &-6623476457030035098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Demo.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FmodProject/Build/Desktop/Demo.bank
+  SubDir: 
+  lastModified: 637148040394394206
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-6518777002493126577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master Bank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FmodProject/Build/Desktop/Master Bank.bank
+  SubDir: 
+  lastModified: 637140835220050776
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-6175816007607740062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/car/velocity
   m_EditorClassIdentifier: 
   Name: velocity
   Min: 0
@@ -92,6 +197,40 @@ MonoBehaviour:
   Max: 10
   Default: 0
   Exists: 1
+--- !u!114 &-5707745076564007970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Engine/engine_on
+  m_EditorClassIdentifier: 
+  Name: engine_on
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-5691671931555089422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 1
 --- !u!114 &-5627045806430858159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +246,23 @@ MonoBehaviour:
   Name: mass
   Min: 0
   Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-5468609013530199866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
   Default: 0
   Exists: 1
 --- !u!114 &-4978447063562619586
@@ -141,14 +297,14 @@ MonoBehaviour:
   Path: event:/SoundMaterials/metal/wood
   guid: 2951a3da712af84989a7ce5dbebb4a59
   Banks:
-  - {fileID: 4325355331188462350}
+  - {fileID: -8797207688004608531}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -2592290485509642284}
-  - {fileID: 901399375325018123}
-  - {fileID: -5627045806430858159}
+  - {fileID: 7737784290197252064}
+  - {fileID: 5763673860420290419}
+  - {fileID: -840309720702167058}
   MinDistance: 1
   MaxDistance: 20
   Length: 263
@@ -166,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FmodProject/Build/Desktop/Master Bank.strings.bank
   SubDir: 
-  lastModified: 637147994322635340
+  lastModified: 637148040394424129
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -189,6 +345,23 @@ MonoBehaviour:
   Max: 20
   Default: 0
   Exists: 1
+--- !u!114 &-2200414301300171938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-1395688550697826827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,13 +377,13 @@ MonoBehaviour:
   Path: event:/Demo/Engine
   guid: a75839af262da948a7d2284530bae9e1
   Banks:
-  - {fileID: -771509297475845901}
+  - {fileID: -6623476457030035098}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 5272624734258745093}
-  - {fileID: -8362946372248493010}
+  - {fileID: 5464561266220291291}
+  - {fileID: -5707745076564007970}
   MinDistance: 1
   MaxDistance: 20
   Length: 1673
@@ -231,6 +404,23 @@ MonoBehaviour:
   lastModified: 637147994322565279
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-840309720702167058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 1
 --- !u!114 &-771509297475845901
 MonoBehaviour:
@@ -299,7 +489,7 @@ MonoBehaviour:
   Path: event:/Demo/antenna
   guid: 36ce9ae799358548b27bee49f56cc89d
   Banks:
-  - {fileID: -771509297475845901}
+  - {fileID: -6623476457030035098}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -321,9 +511,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4467696304665350304}
-  - {fileID: -771509297475845901}
-  - {fileID: -912736326390616538}
-  - {fileID: 4325355331188462350}
+  - {fileID: -6623476457030035098}
+  - {fileID: -6518777002493126577}
+  - {fileID: -8797207688004608531}
   EditorEvents:
   - {fileID: -235127965578756434}
   - {fileID: -1395688550697826827}
@@ -334,11 +524,28 @@ MonoBehaviour:
   - {fileID: 4064680440441772817}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -912736326390616538}
+  - {fileID: -6518777002493126577}
   StringsBanks:
   - {fileID: -4467696304665350304}
-  stringsBankWriteTime: 637147994322635340
+  stringsBankWriteTime: 637148040394424129
   cacheVersion: 3
+--- !u!114 &396898072213388378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/mass
+  m_EditorClassIdentifier: 
+  Name: mass
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &556830652885726608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +580,23 @@ MonoBehaviour:
   Max: 10
   Default: 0
   Exists: 1
+--- !u!114 &1717715268948100443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/metal/velocity
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 20
+  Default: 0
+  Exists: 1
 --- !u!114 &2981046554876326469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,17 +612,51 @@ MonoBehaviour:
   Path: event:/SoundMaterials/wood/wood
   guid: 3c4d31f73c03fe47bafadfd034c1fc5d
   Banks:
-  - {fileID: 4325355331188462350}
+  - {fileID: -8797207688004608531}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -4978447063562619586}
-  - {fileID: 7805693598660079318}
-  - {fileID: 9005574905252428324}
+  - {fileID: 3170090352489373347}
+  - {fileID: -5691671931555089422}
+  - {fileID: 396898072213388378}
   MinDistance: 1
   MaxDistance: 20
   Length: 61
+--- !u!114 &3170090352489373347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/velocity
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 20
+  Default: 0
+  Exists: 1
+--- !u!114 &3671818433557921723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/glass/velocity
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 20
+  Default: 0
+  Exists: 1
 --- !u!114 &4064680440441772817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,14 +672,14 @@ MonoBehaviour:
   Path: event:/SoundMaterials/metal/metal
   guid: ffae7918475be841af33eb71d892fcc9
   Banks:
-  - {fileID: 4325355331188462350}
+  - {fileID: -8797207688004608531}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -641486138770745850}
-  - {fileID: -6061013640718003238}
-  - {fileID: 7613863185692498611}
+  - {fileID: -2200414301300171938}
+  - {fileID: -6698992742050007232}
+  - {fileID: 1717715268948100443}
   MinDistance: 1
   MaxDistance: 20
   Length: 604
@@ -460,6 +718,40 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &5464561266220291291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Engine/engine
+  m_EditorClassIdentifier: 
+  Name: engine
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &5763673860420290419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/size
+  m_EditorClassIdentifier: 
+  Name: size
+  Min: 0
+  Max: 10
+  Default: 0
+  Exists: 1
 --- !u!114 &7613863185692498611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +763,23 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/metal/velocity
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 20
+  Default: 0
+  Exists: 1
+--- !u!114 &7737784290197252064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/wood/velocity
   m_EditorClassIdentifier: 
   Name: velocity
   Min: 0
@@ -509,14 +818,14 @@ MonoBehaviour:
   Path: event:/SoundMaterials/glass/glass
   guid: 91225a65f3f4a444aa0baafb73da2e85
   Banks:
-  - {fileID: 4325355331188462350}
+  - {fileID: -8797207688004608531}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -6134161599587917117}
-  - {fileID: -8225701278517721698}
-  - {fileID: -241027087593507766}
+  - {fileID: -8655321281405744729}
+  - {fileID: 3671818433557921723}
+  - {fileID: -5468609013530199866}
   MinDistance: 1
   MaxDistance: 20
   Length: 266
