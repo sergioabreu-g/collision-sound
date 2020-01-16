@@ -16,6 +16,7 @@ public class VehicleMovement : MonoBehaviour
     public float maxMotorTorque;
     public float maxSteeringAngle;
     public float brakeTorque;
+    public Transform forestPosition;
 
     // finds the corresponding visual wheel
     // correctly applies the transform
@@ -54,6 +55,10 @@ public class VehicleMovement : MonoBehaviour
 
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            transform.position = forestPosition.position;
         }
     }
 }
