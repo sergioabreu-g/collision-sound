@@ -18,7 +18,7 @@ MonoBehaviour:
   sourceProjectPath: Assets/FmodProject/fmod_project.fspro
   sourceBankPath: Assets\FmodProject\Build
   SourceBankPathUnformatted: 
-  AutomaticEventLoading: 0
+  AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0
   EncryptionKey: 
@@ -31,6 +31,8 @@ MonoBehaviour:
   - Platform: 20
     Value: 3
   SampleRateSettings:
+  - Platform: 1
+    Value: 48000
   - Platform: 2
     Value: 0
   - Platform: 20
@@ -77,6 +79,7 @@ MonoBehaviour:
   MasterBanks:
   - Master Bank
   Banks:
+  - Demo
   - SoundMaterials
   BanksToLoad: []
   LiveUpdatePort: 9264

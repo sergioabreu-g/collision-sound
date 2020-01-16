@@ -56,4 +56,8 @@ public class VehicleMovement : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
     }
+
+    public float getMotorSpeedPercent() {
+        return Input.GetAxis("Vertical");
+    }
 }

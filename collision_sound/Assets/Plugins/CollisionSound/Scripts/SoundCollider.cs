@@ -39,14 +39,24 @@ namespace CollisionSound
 
         [Header("FMOD Studio parameters")]
         public bool sizeActive = true;
+        public bool massActive = true;
         public bool velocityActive = true;
 
         private Dictionary<string, float> _customParams;
+        private Rigidbody _rigidbody3D = null;
+        private Rigidbody2D _rigidbody2D = null;
 
         private void Start() {
             _collider = GetComponent<Collider>();
             if (_collider == null)
-                Debug.LogWarning("No collider found. You must have a collider in order to use SoundCollider.");
+                Debug.LogError("No collider found. You must have a collider in order to use SoundCollider.");
+
+            _rigidbody3D = GetComponent<Rigidbody>();
+            _rigidbody2D = GetComponent<Rigidbody2D>();
+
+            if (_rigidbody3D == null && _rigidbody2D == null)
+                Debug.LogError("No Rigidbody/Rigidbody2D found. You must have a Rigidbody/Rigidbody2D in order to use SoundCollider.");
+
             _customParams = new Dictionary<string, float>();
         }
 
@@ -56,11 +66,11 @@ namespace CollisionSound
         /// </summary>
         /// <param name="collidedWith"></param>
         /// <param name="pos">Position of the collision (the position where the sound will be played)</param>
-        /// <param name="force">Relative velocity between the two colliding bodies</param>
-        private void collisionSound(SoundCollider collidedWith, Vector3 pos, float force)
+        /// <param name="velocity">Relative velocity between the two colliding bodies</param>
+        private void collisionSound(SoundCollider collidedWith, Vector3 pos, float velocity)
         {
             updateSize();
-            Manager.collisionDetected(this, collidedWith, transform.position, 0);
+            Manager.collisionDetected(this, collidedWith, transform.position, velocity);
         }
 
         /// <summary>
@@ -72,7 +82,7 @@ namespace CollisionSound
         private void genericCollisionSound(Vector3 pos, float velocity)
         {
             updateSize();
-            Manager.genericCollisionDetected(this, transform.position, 0);
+            Manager.genericCollisionDetected(this, transform.position, velocity);
         }
 
         /// <summary>
@@ -84,7 +94,6 @@ namespace CollisionSound
 
 
         // *** COLLISION DETECTION for every possible scenario ***
-        // Triggers will always detect their collisions with velocity 0
         private void OnCollisionEnter(Collision collision)
         {
             SoundCollider collidedWith = collision.gameObject.GetComponent<SoundCollider>();
@@ -100,7 +109,7 @@ namespace CollisionSound
         {
             SoundCollider collidedWith = other.gameObject.GetComponent<SoundCollider>();
             Vector3 pos = other.ClosestPointOnBounds(transform.position);
-            float vel = 0;
+            float vel = getVelocity();
 
             if (collidedWith != null)
                 collisionSound(collidedWith, pos, vel);
@@ -122,7 +131,7 @@ namespace CollisionSound
         {
             SoundCollider collidedWith = other.gameObject.GetComponent<SoundCollider>();
             Vector2 pos = other.ClosestPoint(transform.position);
-            float vel = 0;
+            float vel = getVelocity();
 
             if (collidedWith != null)
                 collisionSound(collidedWith, pos, vel);
@@ -152,6 +161,32 @@ namespace CollisionSound
         /// <returns>magnitude of the object's size in world units</returns>
         public float getWorldSize() {
             return _worldSize;
+        }
+
+        /// <summary>
+        /// Gets the mass of this GameObject's Rigidbody/Rigidbody2D (kg)
+        /// </summary>
+        /// <returns>The mass of this GameObject's Rigidbody/Rigidbody2D (kg)</returns>
+        public float getMass() {
+            if (_rigidbody3D != null) return _rigidbody3D.mass;
+            else if (_rigidbody2D != null) return _rigidbody2D.mass;
+            else {
+                Debug.LogError("Rigidbody/Rigidbody2D is null when retrieving mass.");
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Gets the current velocity of this GameObject's Rigidbody/Rigidbody2D (m/s)
+        /// </summary>
+        /// <returns>The velocity of this GameObject's Rigidbody/Rigidbody2D (m/s)</returns>
+        public float getVelocity() {
+            if (_rigidbody3D != null) return _rigidbody3D.velocity.magnitude;
+            else if (_rigidbody2D != null) return _rigidbody2D.velocity.magnitude;
+            else {
+                Debug.LogError("Rigidbody/Rigidbody2D is null when retrieving velocity.");
+                return 0;
+            }
         }
 
         /// <summary>

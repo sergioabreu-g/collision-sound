@@ -177,6 +177,8 @@ namespace CollisionSound
                     instance.setParameterByName("size", yourself.getWorldSize() + other.getWorldSize()/2);
                 if (yourself.velocityActive && other.velocityActive)
                     instance.setParameterByName("velocity", collision._velocity);
+                if (yourself.massActive && other.massActive)
+                    instance.setParameterByName("mass", (yourself.getMass() + other.getMass())/ 2);
 
                 // Set the custom parameters (iterate both dictionaries and average the common entries)
                 foreach (KeyValuePair<string, float> customParam in yourself.getCustomParams()) {
@@ -237,6 +239,7 @@ namespace CollisionSound
             // Set the instance built-in parameters (if the SoundCollider has marked them as active)
             if (yourself.sizeActive) instance.setParameterByName("size", yourself.getWorldSize());
             if (yourself.velocityActive) instance.setParameterByName("velocity", collision._velocity);
+            if (yourself.massActive) instance.setParameterByName("mass", yourself.getMass());
 
             // Set the custom parameters
             foreach (KeyValuePair<string, float> customParam in yourself.getCustomParams()) {
