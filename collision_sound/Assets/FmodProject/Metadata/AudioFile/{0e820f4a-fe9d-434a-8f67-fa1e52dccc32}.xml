@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{0e820f4a-fe9d-434a-8f67-fa1e52dccc32}">
+        <property name="assetPath">
+            <value>bush2.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.69750000000000001</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{8c76420f-c302-4d93-be13-ca3b4f8fe29b}</destination>
+        </relationship>
+    </object>
+</objects>

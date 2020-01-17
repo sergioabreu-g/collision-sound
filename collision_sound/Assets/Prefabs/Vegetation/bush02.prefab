@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 19370486}
   - component: {fileID: 3302532}
   - component: {fileID: 2319546}
-  m_Layer: 0
+  - component: {fileID: -7656253788693130214}
+  - component: {fileID: -522444265867216633}
+  m_Layer: 8
   m_Name: bush02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,6 +91,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-7656253788693130214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundMaterial: bush
+  requireAnotherSoundMaterial: 0
+  alwaysPlayDefaultEvent: 1
+  yAxisIsForward2D: 0
+  volume: 0.8
+  mute: 0
+  sizeActive: 1
+  massActive: 1
+  velocityActive: 1
+--- !u!65 &-522444265867216633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.96, y: 1.2, z: 0.92}
+  m_Center: {x: 0.027295142, y: 0.8610845, z: 0.0075896084}
 --- !u!21 &2167682
 Material:
   serializedVersion: 6
