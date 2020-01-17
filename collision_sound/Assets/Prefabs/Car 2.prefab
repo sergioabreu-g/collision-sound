@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6433206}
   - component: {fileID: 5927808940095151397}
   - component: {fileID: 9161310705436736984}
+  - component: {fileID: 3624680763210643273}
   m_Layer: 0
   m_Name: Car_2_Wheel_4
   m_TagString: Untagged
@@ -103,7 +104,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105996}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -119,12 +120,33 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105996}
   m_ConnectedBody: {fileID: 8727645848191340426}
-  m_BreakForce: 9000
-  m_BreakTorque: Infinity
+  m_BreakForce: 4000
+  m_BreakTorque: 4000
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 4
+--- !u!114 &3624680763210643273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundMaterial: car_tire
+  requireAnotherSoundMaterial: 0
+  alwaysPlayDefaultEvent: 0
+  yAxisIsForward2D: 0
+  volume: 1
+  mute: 0
+  sizeActive: 1
+  massActive: 1
+  velocityActive: 1
 --- !u!1 &131374
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +161,7 @@ GameObject:
   - component: {fileID: 6469200}
   - component: {fileID: 4436216584596456825}
   - component: {fileID: 1850538169161350632}
+  - component: {fileID: 1066738781805114040}
   m_Layer: 0
   m_Name: Car_2_Wheel_3
   m_TagString: Untagged
@@ -228,7 +251,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131374}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -244,12 +267,33 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131374}
   m_ConnectedBody: {fileID: 8727645848191340426}
-  m_BreakForce: 9000
-  m_BreakTorque: Infinity
+  m_BreakForce: 4000
+  m_BreakTorque: 4000
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 4
+--- !u!114 &1066738781805114040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundMaterial: car_tire
+  requireAnotherSoundMaterial: 0
+  alwaysPlayDefaultEvent: 0
+  yAxisIsForward2D: 0
+  volume: 1
+  mute: 0
+  sizeActive: 1
+  massActive: 1
+  velocityActive: 1
 --- !u!1 &132248
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +307,7 @@ GameObject:
   - component: {fileID: 2365520}
   - component: {fileID: 6447554}
   - component: {fileID: 8727645848191340426}
+  - component: {fileID: 4621142283687317327}
   m_Layer: 0
   m_Name: Car_2_Model
   m_TagString: Untagged
@@ -353,7 +398,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132248}
   serializedVersion: 2
-  m_Mass: 800
+  m_Mass: 700
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -361,6 +406,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4621142283687317327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundMaterial: car
+  requireAnotherSoundMaterial: 0
+  alwaysPlayDefaultEvent: 0
+  yAxisIsForward2D: 0
+  volume: 1
+  mute: 0
+  sizeActive: 1
+  massActive: 1
+  velocityActive: 1
 --- !u!1 &149150
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +441,7 @@ GameObject:
   - component: {fileID: 6445910}
   - component: {fileID: 4514150871809135564}
   - component: {fileID: 2534008041607306501}
+  - component: {fileID: 721347838802479665}
   m_Layer: 0
   m_Name: Car_2_Wheel_2
   m_TagString: Untagged
@@ -464,7 +531,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149150}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -480,12 +547,33 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149150}
   m_ConnectedBody: {fileID: 8727645848191340426}
-  m_BreakForce: 9000
-  m_BreakTorque: Infinity
+  m_BreakForce: 4000
+  m_BreakTorque: 4000
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 4
+--- !u!114 &721347838802479665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundMaterial: car_tire
+  requireAnotherSoundMaterial: 0
+  alwaysPlayDefaultEvent: 0
+  yAxisIsForward2D: 0
+  volume: 1
+  mute: 0
+  sizeActive: 1
+  massActive: 1
+  velocityActive: 1
 --- !u!1 &174236
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +588,7 @@ GameObject:
   - component: {fileID: 6482932}
   - component: {fileID: 4021811467755551315}
   - component: {fileID: 7891893115003438818}
+  - component: {fileID: 1892067233336441944}
   m_Layer: 0
   m_Name: Car_2_Wheel_1
   m_TagString: Untagged
@@ -589,7 +678,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174236}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -605,12 +694,33 @@ FixedJoint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174236}
   m_ConnectedBody: {fileID: 8727645848191340426}
-  m_BreakForce: 9000
-  m_BreakTorque: Infinity
+  m_BreakForce: 4000
+  m_BreakTorque: 4000
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
-  m_ConnectedMassScale: 1
+  m_ConnectedMassScale: 4
+--- !u!114 &1892067233336441944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundMaterial: car_tire
+  requireAnotherSoundMaterial: 0
+  alwaysPlayDefaultEvent: 0
+  yAxisIsForward2D: 0
+  volume: 1
+  mute: 0
+  sizeActive: 1
+  massActive: 1
+  velocityActive: 1
 --- !u!1 &181422
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,9 +744,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181422}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 430096}
   - {fileID: 436200}
