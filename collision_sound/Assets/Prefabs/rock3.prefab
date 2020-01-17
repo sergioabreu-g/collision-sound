@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8435539839738943947}
   - component: {fileID: 8281565454911826764}
   - component: {fileID: 4693465413119525998}
+  - component: {fileID: -3674683536359026477}
   m_Layer: 0
   m_Name: rock3
   m_TagString: Untagged
@@ -130,3 +131,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3674683536359026477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8435539839738943946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundMaterial: pebbles
+  requireAnotherSoundMaterial: 0
+  alwaysPlayDefaultEvent: 1
+  yAxisIsForward2D: 0
+  volume: 1
+  mute: 0
+  sizeActive: 1
+  massActive: 1
+  velocityActive: 1
