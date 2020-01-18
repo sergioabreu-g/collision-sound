@@ -54,9 +54,6 @@ namespace CollisionSound
             _rigidbody3D = GetComponent<Rigidbody>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
 
-            if (_rigidbody3D == null && _rigidbody2D == null)
-                Debug.LogError("No Rigidbody/Rigidbody2D found. You must have a Rigidbody/Rigidbody2D in order to use SoundCollider.");
-
             _customParams = new Dictionary<string, float>();
         }
 
@@ -70,7 +67,7 @@ namespace CollisionSound
         private void collisionSound(SoundCollider collidedWith, Vector3 pos, float velocity)
         {
             updateSize();
-            Manager.collisionDetected(this, collidedWith, transform.position, velocity);
+            Manager.collisionDetected(this, collidedWith, pos, velocity);
         }
 
         /// <summary>
@@ -109,11 +106,12 @@ namespace CollisionSound
         {
             SoundCollider collidedWith = other.gameObject.GetComponent<SoundCollider>();
             Vector3 pos = other.ClosestPointOnBounds(transform.position);
-            float vel = getVelocity();
+            Vector3 vel = getVelocity();
+            if (other.attachedRigidbody != null) vel += other.attachedRigidbody.velocity;
 
             if (collidedWith != null)
-                collisionSound(collidedWith, pos, vel);
-            else if (!requireAnotherSoundMaterial) genericCollisionSound(pos, vel);
+                collisionSound(collidedWith, pos, vel.magnitude);
+            else if (!requireAnotherSoundMaterial) genericCollisionSound(pos, vel.magnitude);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -131,11 +129,12 @@ namespace CollisionSound
         {
             SoundCollider collidedWith = other.gameObject.GetComponent<SoundCollider>();
             Vector2 pos = other.ClosestPoint(transform.position);
-            float vel = getVelocity();
+            Vector3 vel = getVelocity();
+            if (other.attachedRigidbody != null) vel += (Vector3) other.attachedRigidbody.velocity;
 
             if (collidedWith != null)
-                collisionSound(collidedWith, pos, vel);
-            else if (!requireAnotherSoundMaterial) genericCollisionSound(pos, vel);
+                collisionSound(collidedWith, pos, vel.magnitude);
+            else if (!requireAnotherSoundMaterial) genericCollisionSound(pos, vel.magnitude);
         }
 
         /// <summary>
@@ -170,23 +169,19 @@ namespace CollisionSound
         public float getMass() {
             if (_rigidbody3D != null) return _rigidbody3D.mass;
             else if (_rigidbody2D != null) return _rigidbody2D.mass;
-            else {
-                Debug.LogError("Rigidbody/Rigidbody2D is null when retrieving mass.");
-                return 0;
-            }
+            
+            return 0;
         }
 
         /// <summary>
         /// Gets the current velocity of this GameObject's Rigidbody/Rigidbody2D (m/s)
         /// </summary>
         /// <returns>The velocity of this GameObject's Rigidbody/Rigidbody2D (m/s)</returns>
-        public float getVelocity() {
-            if (_rigidbody3D != null) return _rigidbody3D.velocity.magnitude;
-            else if (_rigidbody2D != null) return _rigidbody2D.velocity.magnitude;
-            else {
-                Debug.LogError("Rigidbody/Rigidbody2D is null when retrieving velocity.");
-                return 0;
-            }
+        public Vector3 getVelocity() {
+            if (_rigidbody3D != null) return _rigidbody3D.velocity;
+            else if (_rigidbody2D != null) return _rigidbody2D.velocity;
+            
+            return Vector3.zero;
         }
 
         /// <summary>
