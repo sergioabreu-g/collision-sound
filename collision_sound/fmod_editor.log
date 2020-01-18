@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000019F6D1F0688 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000026C8836B4E8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -20,6 +20,72 @@
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 123)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 123)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 53600
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 6496
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000DE2971EFFC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFD31FA80A0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFD31FA8070
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFD31FA8170
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFD31FA8230
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000026C9A97DDC8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='branch-snap', format=2, channels=1, frequency=48000, lengthbytes=14496, lengthpcm=73684, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999878.
+[LOG] SoundI::release                          :  (0000026CEF6C1EF8)
+[LOG] SoundI::release                          :     engine (0000026CDCB30EB8)
+[LOG] SoundI::release                          :  (0000026CEF6C1D88)
+[LOG] SoundI::release                          :     engine-start (0000026CDCB323D8)
+[LOG] SoundI::release                          :  (0000026CDCB939F8)
+[LOG] SoundI::release                          :     branch-snap (0000026CDC8B4078)
+[LOG] SoundI::release                          :  (0000026CFF21AD38)
+[LOG] SoundI::release                          :     tire (0000026CD733C798)
+[LOG] SoundI::release                          :  (0000026CEFD401F8)
+[LOG] SoundI::release                          :     bush1 (0000026CDCB31A18)
+[LOG] SoundI::release                          :  (0000026CDD8D5D68)
+[LOG] SoundI::release                          :     bush2 (0000026CDCB31878)
+[LOG] SoundI::release                          :  (0000026CDD8D6328)
+[LOG] SoundI::release                          :     bush3 (0000026CDCB328B8)
+[LOG] SoundI::release                          :  (0000026CEFD3F7E8)
+[LOG] SoundI::release                          :     bush4 (0000026CDCB311F8)
+[LOG] SoundI::release                          :  (0000026CFF219638)
+[LOG] SoundI::release                          :     pebbles1 (0000026CD733D498)
+[LOG] SoundI::release                          :  (0000026CFF21ABC8)
+[LOG] SoundI::release                          :     pebbles2 (0000026CD6F1D0B8)
+[LOG] SoundI::release                          :  (0000026CFF21A8E8)
+[LOG] SoundI::release                          :     pebbles3 (0000026CD733D978)
+[LOG] SoundI::release                          :  (0000026CFF21A1B8)
+[LOG] SoundI::release                          :     pebbles4 (0000026CD733D7D8)
+[LOG] SoundI::release                          :  (0000026CB680C4E8)
+[LOG] SoundI::release                          :     wood-break (0000026CDCF8C658)
+[LOG] SoundI::release                          :  (0000026CDD8D68E8)
+[LOG] SoundI::release                          :     wood-glass (0000026CDCB30B78)
+[LOG] SoundI::release                          :  (0000026CEF6C0238)
+[LOG] SoundI::release                          :     wood-glass-break (0000026CDCB32718)
+[LOG] SoundI::release                          :  (0000026CEF6C0AD8)
+[LOG] SoundI::release                          :     big-crash (0000026CDCB316D8)
+[LOG] SoundI::release                          :  (0000026CFF2194C8)
+[LOG] SoundI::release                          :     small-crash (0000026CD733DB18)
+[LOG] SoundI::release                          :  (0000026CFF21BA28)
+[LOG] SoundI::release                          :     wood_fall (0000026CD733C938)
+[LOG] SoundI::release                          :  (0000026CFF21B018)
+[LOG] SoundI::release                          :     wood-collision (0000026CD733D158)
+[LOG] SoundI::release                          :  (0000026CB680C658)
+[LOG] SoundI::release                          :     metal_fall (0000026CDCF8E058)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 

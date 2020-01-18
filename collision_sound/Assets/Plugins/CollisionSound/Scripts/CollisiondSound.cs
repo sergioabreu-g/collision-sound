@@ -206,10 +206,12 @@ namespace CollisionSound
                 instance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(pos));
                 instance.start();
             }
-            else { // Else, play each sound material default sound
-                playGenericCollision(collision);
-                collision._yourself = collision._other;
-                playGenericCollision(collision);
+            else { // Else, play each sound material default sound (if it's not muted by the other SoundCollider)
+                if (!other.muteOtherDefaultEvents) playGenericCollision(collision);
+                if (!yourself.muteOtherDefaultEvents) {
+                    collision._yourself = collision._other;
+                    playGenericCollision(collision);
+                }
             }
         }
 

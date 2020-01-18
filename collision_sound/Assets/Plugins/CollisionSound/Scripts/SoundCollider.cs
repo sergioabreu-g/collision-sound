@@ -22,6 +22,10 @@ namespace CollisionSound
                 "ignoring the events defined for specific material interactions.")]
         public bool alwaysPlayDefaultEvent = false;
 
+        [Tooltip("When this GameObject collides with another SoundCollider, it will force it" +
+                 "NOT to play its default event. Specific interaction events will still be played.")]
+        public bool muteOtherDefaultEvents = false;
+
         [Tooltip("ONLY FOR 2D COLLIDERS. If set to true, Y axis will " +
                 "be treated as forward/backward when positioning the sounds in 3D" +
                 ", instead of up/down.")]

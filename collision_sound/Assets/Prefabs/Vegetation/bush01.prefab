@@ -106,6 +106,7 @@ MonoBehaviour:
   _soundMaterial: bush
   requireAnotherSoundMaterial: 0
   alwaysPlayDefaultEvent: 1
+  muteOtherDefaultEvents: 1
   yAxisIsForward2D: 0
   volume: 0.8
   mute: 0

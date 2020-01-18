@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3350282}
   - component: {fileID: 2323548}
   - component: {fileID: 13699876}
+  - component: {fileID: 406999042328371192}
   m_Layer: 0
   m_Name: tree03
   m_TagString: Untagged
@@ -104,6 +105,27 @@ CapsuleCollider:
   m_Height: 8.61388
   m_Direction: 1
   m_Center: {x: -0.01, y: 3.76, z: -0.06}
+--- !u!114 &406999042328371192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a6734fdb2f35a40871b02eb019a5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundMaterial: wood
+  requireAnotherSoundMaterial: 0
+  alwaysPlayDefaultEvent: 0
+  yAxisIsForward2D: 0
+  volume: 1
+  mute: 0
+  sizeActive: 1
+  massActive: 1
+  velocityActive: 1
 --- !u!21 &2131188
 Material:
   serializedVersion: 6
