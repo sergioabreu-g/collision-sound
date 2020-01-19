@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 13647794}
   - component: {fileID: 13681708}
   - component: {fileID: -8275700463781763666}
+  - component: {fileID: -7229504846111184949}
   m_Layer: 0
   m_Name: tree04
   m_TagString: Untagged
@@ -150,12 +151,36 @@ MonoBehaviour:
   _soundMaterial: wood
   requireAnotherSoundMaterial: 0
   alwaysPlayDefaultEvent: 0
+  muteOtherDefaultEvents: 0
   yAxisIsForward2D: 0
   volume: 1
   mute: 0
   sizeActive: 1
   massActive: 1
   velocityActive: 1
+--- !u!114 &-7229504846111184949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Demo/tree_ambient
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!21 &2113140
 Material:
   serializedVersion: 6

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{95582650-e21d-44af-888b-18a7ea4f1a47}">
+        <property name="assetPath">
+            <value>wind-tree2.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>48</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>42.913479166666669</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{8c76420f-c302-4d93-be13-ca3b4f8fe29b}</destination>
+        </relationship>
+    </object>
+</objects>
