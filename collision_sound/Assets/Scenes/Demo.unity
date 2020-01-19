@@ -5548,6 +5548,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1028113179}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &471512935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3097462891662071231, guid: 7914de26f796de5458cfc1fffc7a9973,
+    type: 3}
+  m_PrefabInstance: {fileID: 1645954727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &472158903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13894,7 +13900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.627451}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -15192,7 +15198,7 @@ MonoBehaviour:
   useRadialDistance: 1
   heightFog: 1
   height: 2.3
-  heightDensity: 4.2
+  heightDensity: 2.57
   startDistance: 76.47
   fogShader: {fileID: 4800000, guid: 70d8568987ac0499f952b54c7c13e265, type: 3}
 --- !u!114 &1125402712
@@ -15253,7 +15259,7 @@ MonoBehaviour:
   radialBlurIterations: 2
   sunColor: {r: 1, g: 0.57221097, b: 0.18382353, a: 1}
   sunThreshold: {r: 0.7647059, g: 0.55375254, b: 0, a: 1}
-  sunShaftBlurRadius: 3.78
+  sunShaftBlurRadius: 3.04
   sunShaftIntensity: 0.6
   maxRadius: 0.9
   useDepthTexture: 1
@@ -15272,11 +15278,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
-  intensity: 0.238
+  intensity: 0.198
   chromaticAberration: 0.2
   axialAberration: 0.5
-  blur: 0.215
-  blurSpread: 0.101
+  blur: 0.144
+  blurSpread: 0.167
   luminanceDependency: 0.25
   blurDistance: 2.5
   vignetteShader: {fileID: 4800000, guid: 627943dc7a9a74286b70a4f694a0acd5, type: 3}
@@ -15298,10 +15304,10 @@ MonoBehaviour:
   tweakMode: 0
   screenBlendMode: 0
   hdr: 0
-  sepBlurSpread: 2.87
+  sepBlurSpread: 2.75
   quality: 1
   bloomIntensity: 3.01
-  bloomThreshold: 0.7
+  bloomThreshold: 0.74
   bloomThresholdColor: {r: 1, g: 1, b: 1, a: 1}
   bloomBlurIterations: 4
   hollywoodFlareBlurIterations: 2
@@ -15521,7 +15527,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  saturation: 0.78
+  saturation: 0.74
   selectiveCc: 0
   selectiveFromColor: {r: 1, g: 1, b: 1, a: 1}
   selectiveToColor: {r: 1, g: 1, b: 1, a: 1}
@@ -15575,11 +15581,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b937376b766a444aaee63c239d1a94b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whoToFollow: {fileID: 1182891066}
-  offset: {x: 0, y: 0.4, z: -4}
+  whoToFollow: {fileID: 471512935}
+  offset: {x: 0, y: 1, z: -3}
   sensivity: 100
-  verticalClampAngle: 10
-  horizontalClampAngle: 25
+  verticalClampAngle: 18
+  horizontalClampAngle: 40
+  autoCenter: 1
+  autoCenterStrength: 2
 --- !u!1001 &1126976666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16207,12 +16215,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
---- !u!1 &1182891066 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3097462891662071231, guid: 7914de26f796de5458cfc1fffc7a9973,
-    type: 3}
-  m_PrefabInstance: {fileID: 1645954727}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1187553421
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -37,6 +37,13 @@ public class PlayerVehicle : MonoBehaviour
         visualWheel.transform.rotation = rotation;
     }
 
+    private void Update() {
+        if (Input.GetButton("Fire2")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (Input.GetButton("Cancel")) Application.Quit();
+    }
+
     public void FixedUpdate() {
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
@@ -58,9 +65,7 @@ public class PlayerVehicle : MonoBehaviour
             ApplyLocalPositionToVisuals(axleInfo.leftWheel);
             ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
-        if (Input.GetButton("Fire2")) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   
-        }
+
         if (Input.GetButton("Jump")) {
             chasis.velocity = new Vector3(chasis.velocity.x, 0, chasis.velocity.z);
             chasis.AddForce(flyUpForce * Vector3.up);
