@@ -38,7 +38,7 @@ already configured with the Unity package, read [this](https://www.fmod.com/reso
 - All the materials and its events must be under the root folder `SoundMaterials`.
 - Every collision event must be assigned to the `SoundMaterials` bank.
 - Everything outside the `SoundMaterials` folder and bank will be ignored by Collision Sound when
-importing from Unity.
+importing the events from Unity.
 - You can have any other folders/banks/events on the same FMOD Project, they won't affect Sound Collision
 at all.
 
@@ -61,9 +61,7 @@ The only two things you have to handle in Unity are the `SoundCollider` componen
 **add a SoundCollider to any GameObject you want to make sounds on collision**.
 
 #### Important!
-`The SoundCollider script uses 'OnCollision' events, so in order for it to work, it must have a Rigidbody attached.
-This is not enforced through 'RequireComponent' because if two SoundColliders collide, only one must have it in
-order to play the collision sound, though in many cases it may not be necessary to have one Rigidbody per SoundCollider.`
+`The SoundCollider script uses 'OnCollision' and 'OnTrigger' events, so in order for it to work, it must have a Rigidbody attached or be a trigger. This is not enforced or warned through code because in many cases it may be useful not to get those methods called. For example, you may have some objects that do not emit sound themselves when colliding, but are still treated as a SoundCollider, so other SoundColliders can have specific interactions with them.`
 
 The following is a description of every attribute of the SoundCollider component:
 
@@ -75,6 +73,7 @@ The following is a description of every attribute of the SoundCollider component
 also has a SoundMaterial component.
 - `Always Play Default Event`: if set to true, this SoundCollider will always play its default event
 ignoring the events defined for specific material interactions.
+- `Mute Other Default Events`: when this GameObject collides with another SoundCollider, it will force it NOT to play its default event. Specific interaction events will still be played.
 - `Y Axis Is Forward 2D`: ONLY FOR 2D COLLIDERS. If set to true, Y axis will be treated
 as forward/backward when positioning the sounds in 3D instead of up/down.
 
@@ -85,8 +84,9 @@ events, the volume will be the average of both volumes.
 will not be played.
 
 ### FMOD Studio parameters
-- `Size Active`: whether to set parameter size when playing the events
-- `Velocity Active`: whether to set parameter velocity when playing the events
+- `Size Active`: whether to set the parameter *size* when playing collision events
+- `Velocity Active`: whether to set the parameter *velocity* when playing collision events
+- `Mass Active`: whether to set the parameter *mass* when playing collision events
 
 ## Parameters & automations
 One of the more powerful tools of FMOD Studio is the parametrization & automation, and they're
@@ -105,7 +105,8 @@ the event will be automatically adjusted on runtime depending on the current siz
 
 - `size`: magnitude of the object's collider size Vector3 (in world units).
 - `velocity`: magnitude of the relative velocity Vector3 between the bodies of the collision
-(if using triggers, it will be always 0)
+(if using triggers, it will be always 0).
+- `mass`: mass of the object's Rigidbody.
 
 ### Custom parameters
 You can setup custom parameters for any of your events, and then set their values from code in Unity. To do so, just add any parameter to your collision events in FMOD Studio, then call call the method `setCustomParam(string parameter, float value)` of the SoundCollider that will be playing that event to set its value. You can also set all parameters at once by passing a `Dictionary<string, float>`, as well as get the parameters you've already set.
