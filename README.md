@@ -105,7 +105,7 @@ the event will be automatically adjusted on runtime depending on the current siz
 
 - `size`: magnitude of the object's collider size Vector3 (in world units).
 - `velocity`: magnitude of the relative velocity Vector3 between the bodies of the collision
-(if using triggers, it will be always 0).
+(if using triggers, it will the velocity of the colliding Rigidbody).
 - `mass`: mass of the object's Rigidbody.
 
 ### Custom parameters
