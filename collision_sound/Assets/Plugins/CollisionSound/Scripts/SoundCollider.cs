@@ -22,7 +22,7 @@ namespace CollisionSound
                 "ignoring the events defined for specific material interactions.")]
         public bool alwaysPlayDefaultEvent = false;
 
-        [Tooltip("When this GameObject collides with another SoundCollider, it will force it" +
+        [Tooltip("When this GameObject collides with another SoundCollider, it will force it " +
                  "NOT to play its default event. Specific interaction events will still be played.")]
         public bool muteOtherDefaultEvents = false;
 
