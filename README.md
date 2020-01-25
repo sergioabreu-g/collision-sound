@@ -4,6 +4,8 @@ Collision Sound aims to be an easy and powerful way of adding sound to
 object collisions in [Unity](https://unity.com/). You can download the latest Unity package
 [here](https://github.com/Sag-Dev/collision-sound/releases).
 
+[DEMO VIDEO](https://www.youtube.com/watch?v=9sOHbRK5zb4)
+
 # Getting started
 Collision Sound requires the use of [Fmod Studio](https://www.fmod.com/studio)
 to setup the material interactions and its parameters, so
